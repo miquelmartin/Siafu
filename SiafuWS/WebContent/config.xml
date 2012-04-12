@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<configuration>
-		<!-- Where is the running Siafu Listening? -->
-		<host>localhost</host>
-		<tcpport>4444</tcpport>
-</configuration>
