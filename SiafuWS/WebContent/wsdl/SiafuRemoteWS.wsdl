@@ -1,0 +1,852 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://ws.siafu.nle.nec.de" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://ws.siafu.nle.nec.de" xmlns:intf="http://ws.siafu.nle.nec.de" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<!--WSDL created by Apache Axis version: 1.4
+Built on Apr 22, 2006 (06:55:48 PDT)-->
+ <wsdl:types>
+  <schema elementFormDefault="qualified" targetNamespace="http://ws.siafu.nle.nec.de" xmlns="http://www.w3.org/2001/XMLSchema">
+   <element name="setMarks">
+    <complexType>
+     <sequence>
+      <element maxOccurs="unbounded" name="name" type="xsd:string"/>
+      <element maxOccurs="unbounded" name="style" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="setMarksResponse">
+    <complexType/>
+   </element>
+   <element name="removeMark">
+    <complexType>
+     <sequence>
+      <element name="name" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="removeMarkResponse">
+    <complexType/>
+   </element>
+   <element name="removeMarks">
+    <complexType>
+     <sequence>
+      <element maxOccurs="unbounded" name="name" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="removeMarksResponse">
+    <complexType/>
+   </element>
+   <element name="removeAllMarks">
+    <complexType/>
+   </element>
+   <element name="removeAllMarksResponse">
+    <complexType/>
+   </element>
+   <element name="moveMultiple">
+    <complexType>
+     <sequence>
+      <element maxOccurs="unbounded" name="name" type="xsd:string"/>
+      <element maxOccurs="unbounded" name="latitude" type="xsd:double"/>
+      <element maxOccurs="unbounded" name="longitude" type="xsd:double"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="moveMultipleResponse">
+    <complexType/>
+   </element>
+   <element name="autoMode">
+    <complexType>
+     <sequence>
+      <element name="name" type="xsd:string"/>
+      <element name="setting" type="xsd:boolean"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="autoModeResponse">
+    <complexType/>
+   </element>
+   <element name="autoModeMultiple">
+    <complexType>
+     <sequence>
+      <element maxOccurs="unbounded" name="name" type="xsd:string"/>
+      <element maxOccurs="unbounded" name="setting" type="xsd:boolean"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="autoModeMultipleResponse">
+    <complexType/>
+   </element>
+   <element name="setAgentImage">
+    <complexType>
+     <sequence>
+      <element name="name" type="xsd:string"/>
+      <element name="image" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="setAgentImageResponse">
+    <complexType/>
+   </element>
+   <element name="setMultipleAgentImages">
+    <complexType>
+     <sequence>
+      <element maxOccurs="unbounded" name="name" type="xsd:string"/>
+      <element maxOccurs="unbounded" name="image" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="setMultipleAgentImagesResponse">
+    <complexType/>
+   </element>
+   <element name="setPreviousImage">
+    <complexType>
+     <sequence>
+      <element name="name" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="setPreviousImageResponse">
+    <complexType/>
+   </element>
+   <element name="setMultiplePreviousImages">
+    <complexType>
+     <sequence>
+      <element maxOccurs="unbounded" name="name" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="setMultiplePreviousImagesResponse">
+    <complexType/>
+   </element>
+   <element name="hideAgent">
+    <complexType>
+     <sequence>
+      <element name="name" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="hideAgentResponse">
+    <complexType/>
+   </element>
+   <element name="hideAgents">
+    <complexType>
+     <sequence>
+      <element maxOccurs="unbounded" name="name" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="hideAgentsResponse">
+    <complexType/>
+   </element>
+   <element name="unhideAgent">
+    <complexType>
+     <sequence>
+      <element name="name" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="unhideAgentResponse">
+    <complexType/>
+   </element>
+   <element name="unhideAgents">
+    <complexType>
+     <sequence>
+      <element maxOccurs="unbounded" name="name" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="unhideAgentsResponse">
+    <complexType/>
+   </element>
+   <element name="move">
+    <complexType>
+     <sequence>
+      <element name="name" type="xsd:string"/>
+      <element name="latitude" type="xsd:double"/>
+      <element name="longitude" type="xsd:double"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="moveResponse">
+    <complexType/>
+   </element>
+   <element name="setMark">
+    <complexType>
+     <sequence>
+      <element name="name" type="xsd:string"/>
+      <element name="style" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="setMarkResponse">
+    <complexType/>
+   </element>
+  </schema>
+ </wsdl:types>
+
+   <wsdl:message name="setMarkRequest">
+
+      <wsdl:part element="impl:setMark" name="parameters"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="setPreviousImageRequest">
+
+      <wsdl:part element="impl:setPreviousImage" name="parameters"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="hideAgentResponse">
+
+      <wsdl:part element="impl:hideAgentResponse" name="parameters"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="removeMarksResponse">
+
+      <wsdl:part element="impl:removeMarksResponse" name="parameters"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="setMultipleAgentImagesResponse">
+
+      <wsdl:part element="impl:setMultipleAgentImagesResponse" name="parameters"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="moveMultipleRequest">
+
+      <wsdl:part element="impl:moveMultiple" name="parameters"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="removeMarksRequest">
+
+      <wsdl:part element="impl:removeMarks" name="parameters"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="autoModeResponse">
+
+      <wsdl:part element="impl:autoModeResponse" name="parameters"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="setMultipleAgentImagesRequest">
+
+      <wsdl:part element="impl:setMultipleAgentImages" name="parameters"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="hideAgentRequest">
+
+      <wsdl:part element="impl:hideAgent" name="parameters"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="moveMultipleResponse">
+
+      <wsdl:part element="impl:moveMultipleResponse" name="parameters"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="setMarkResponse">
+
+      <wsdl:part element="impl:setMarkResponse" name="parameters"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="unhideAgentResponse">
+
+      <wsdl:part element="impl:unhideAgentResponse" name="parameters"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="hideAgentsRequest">
+
+      <wsdl:part element="impl:hideAgents" name="parameters"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="moveRequest">
+
+      <wsdl:part element="impl:move" name="parameters"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="removeAllMarksResponse">
+
+      <wsdl:part element="impl:removeAllMarksResponse" name="parameters"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="removeMarkRequest">
+
+      <wsdl:part element="impl:removeMark" name="parameters"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="moveResponse">
+
+      <wsdl:part element="impl:moveResponse" name="parameters"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="setMultiplePreviousImagesRequest">
+
+      <wsdl:part element="impl:setMultiplePreviousImages" name="parameters"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="hideAgentsResponse">
+
+      <wsdl:part element="impl:hideAgentsResponse" name="parameters"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="setMultiplePreviousImagesResponse">
+
+      <wsdl:part element="impl:setMultiplePreviousImagesResponse" name="parameters"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="removeMarkResponse">
+
+      <wsdl:part element="impl:removeMarkResponse" name="parameters"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="unhideAgentsRequest">
+
+      <wsdl:part element="impl:unhideAgents" name="parameters"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="unhideAgentRequest">
+
+      <wsdl:part element="impl:unhideAgent" name="parameters"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="autoModeMultipleRequest">
+
+      <wsdl:part element="impl:autoModeMultiple" name="parameters"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="removeAllMarksRequest">
+
+      <wsdl:part element="impl:removeAllMarks" name="parameters"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="setMarksRequest">
+
+      <wsdl:part element="impl:setMarks" name="parameters"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="setPreviousImageResponse">
+
+      <wsdl:part element="impl:setPreviousImageResponse" name="parameters"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="setMarksResponse">
+
+      <wsdl:part element="impl:setMarksResponse" name="parameters"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="setAgentImageRequest">
+
+      <wsdl:part element="impl:setAgentImage" name="parameters"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="autoModeMultipleResponse">
+
+      <wsdl:part element="impl:autoModeMultipleResponse" name="parameters"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="autoModeRequest">
+
+      <wsdl:part element="impl:autoMode" name="parameters"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="setAgentImageResponse">
+
+      <wsdl:part element="impl:setAgentImageResponse" name="parameters"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="unhideAgentsResponse">
+
+      <wsdl:part element="impl:unhideAgentsResponse" name="parameters"/>
+
+   </wsdl:message>
+
+   <wsdl:portType name="SiafuRemoteWS">
+
+      <wsdl:operation name="setMarks">
+
+         <wsdl:input message="impl:setMarksRequest" name="setMarksRequest"/>
+
+         <wsdl:output message="impl:setMarksResponse" name="setMarksResponse"/>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="removeMark">
+
+         <wsdl:input message="impl:removeMarkRequest" name="removeMarkRequest"/>
+
+         <wsdl:output message="impl:removeMarkResponse" name="removeMarkResponse"/>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="removeMarks">
+
+         <wsdl:input message="impl:removeMarksRequest" name="removeMarksRequest"/>
+
+         <wsdl:output message="impl:removeMarksResponse" name="removeMarksResponse"/>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="removeAllMarks">
+
+         <wsdl:input message="impl:removeAllMarksRequest" name="removeAllMarksRequest"/>
+
+         <wsdl:output message="impl:removeAllMarksResponse" name="removeAllMarksResponse"/>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="moveMultiple">
+
+         <wsdl:input message="impl:moveMultipleRequest" name="moveMultipleRequest"/>
+
+         <wsdl:output message="impl:moveMultipleResponse" name="moveMultipleResponse"/>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="autoMode">
+
+         <wsdl:input message="impl:autoModeRequest" name="autoModeRequest"/>
+
+         <wsdl:output message="impl:autoModeResponse" name="autoModeResponse"/>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="autoModeMultiple">
+
+         <wsdl:input message="impl:autoModeMultipleRequest" name="autoModeMultipleRequest"/>
+
+         <wsdl:output message="impl:autoModeMultipleResponse" name="autoModeMultipleResponse"/>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="setAgentImage">
+
+         <wsdl:input message="impl:setAgentImageRequest" name="setAgentImageRequest"/>
+
+         <wsdl:output message="impl:setAgentImageResponse" name="setAgentImageResponse"/>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="setMultipleAgentImages">
+
+         <wsdl:input message="impl:setMultipleAgentImagesRequest" name="setMultipleAgentImagesRequest"/>
+
+         <wsdl:output message="impl:setMultipleAgentImagesResponse" name="setMultipleAgentImagesResponse"/>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="setPreviousImage">
+
+         <wsdl:input message="impl:setPreviousImageRequest" name="setPreviousImageRequest"/>
+
+         <wsdl:output message="impl:setPreviousImageResponse" name="setPreviousImageResponse"/>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="setMultiplePreviousImages">
+
+         <wsdl:input message="impl:setMultiplePreviousImagesRequest" name="setMultiplePreviousImagesRequest"/>
+
+         <wsdl:output message="impl:setMultiplePreviousImagesResponse" name="setMultiplePreviousImagesResponse"/>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="hideAgent">
+
+         <wsdl:input message="impl:hideAgentRequest" name="hideAgentRequest"/>
+
+         <wsdl:output message="impl:hideAgentResponse" name="hideAgentResponse"/>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="hideAgents">
+
+         <wsdl:input message="impl:hideAgentsRequest" name="hideAgentsRequest"/>
+
+         <wsdl:output message="impl:hideAgentsResponse" name="hideAgentsResponse"/>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="unhideAgent">
+
+         <wsdl:input message="impl:unhideAgentRequest" name="unhideAgentRequest"/>
+
+         <wsdl:output message="impl:unhideAgentResponse" name="unhideAgentResponse"/>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="unhideAgents">
+
+         <wsdl:input message="impl:unhideAgentsRequest" name="unhideAgentsRequest"/>
+
+         <wsdl:output message="impl:unhideAgentsResponse" name="unhideAgentsResponse"/>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="move">
+
+         <wsdl:input message="impl:moveRequest" name="moveRequest"/>
+
+         <wsdl:output message="impl:moveResponse" name="moveResponse"/>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="setMark">
+
+         <wsdl:input message="impl:setMarkRequest" name="setMarkRequest"/>
+
+         <wsdl:output message="impl:setMarkResponse" name="setMarkResponse"/>
+
+      </wsdl:operation>
+
+   </wsdl:portType>
+
+   <wsdl:binding name="SiafuRemoteWSSoapBinding" type="impl:SiafuRemoteWS">
+
+      <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+
+      <wsdl:operation name="setMarks">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="setMarksRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="setMarksResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="removeMark">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="removeMarkRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="removeMarkResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="removeMarks">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="removeMarksRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="removeMarksResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="removeAllMarks">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="removeAllMarksRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="removeAllMarksResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="moveMultiple">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="moveMultipleRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="moveMultipleResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="autoMode">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="autoModeRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="autoModeResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="autoModeMultiple">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="autoModeMultipleRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="autoModeMultipleResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="setAgentImage">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="setAgentImageRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="setAgentImageResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="setMultipleAgentImages">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="setMultipleAgentImagesRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="setMultipleAgentImagesResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="setPreviousImage">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="setPreviousImageRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="setPreviousImageResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="setMultiplePreviousImages">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="setMultiplePreviousImagesRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="setMultiplePreviousImagesResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="hideAgent">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="hideAgentRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="hideAgentResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="hideAgents">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="hideAgentsRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="hideAgentsResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="unhideAgent">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="unhideAgentRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="unhideAgentResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="unhideAgents">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="unhideAgentsRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="unhideAgentsResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="move">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="moveRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="moveResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="setMark">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="setMarkRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="setMarkResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:binding>
+
+   <wsdl:service name="SiafuRemoteWSService">
+
+      <wsdl:port binding="impl:SiafuRemoteWSSoapBinding" name="SiafuRemoteWS">
+
+         <wsdlsoap:address location="http://localhost:8080/SiafuWS/services/SiafuRemoteWS"/>
+
+      </wsdl:port>
+
+   </wsdl:service>
+
+</wsdl:definitions>

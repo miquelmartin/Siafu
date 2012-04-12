@@ -1,0 +1,22 @@
+Remote
+=======================================
+
+Original author:
+Miquel Martin <contact@miquelmartin.org>
+	XMPP: miquel@jabber.org
+	MSN:  miquel_m@hotmail.com
+	ICQ:  353758524
+	AIM:  miquelmartin07
+	web:  http://miquelmartin.org
+
+Art used in Siafu:
+========================================
+The connected or disconnected emblems belong to the
+gnome and nuvola themes distributed with Ubuntu.
+
+Nuvola was created by:
+David Vignoni (david@icon-king.com)
+ICON KING - www.icon-king.com
+
+The Ubuntu theme, from:
+Ubuntu Desktop Team <ubuntu-desktop@lists.ubuntu.com>

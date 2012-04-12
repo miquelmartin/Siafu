@@ -1,0 +1,41 @@
+Sprites
+==============================================================================
+Sprites are the representation of agents in the simulator. An example sprite
+set is provided, buy you are free to create your own. Here's how:
+
+1. Change the configuration file, so that the spritepath entry points to the
+   base directory where you'll put in the sprites.
+
+2. Create three directories, one per size, so that you have:
+     ${spritepath}/16x9
+     ${spritepath}/19x11
+     ${spritepath}/38x22
+
+3. In each of those directories, you need to put your sprite images, in png
+   format, and named:
+       NAME-OFFSETX.OFFSETY-DIRECTION.png
+   where:
+   	NAME is the name of the sprite, e.g. HumanBluue
+
+   	OFFSETX and OFFSETY are the distances from the left side of the image,
+   	and from the top side of the image respectively, which point to the pixel
+   	in the sprite that should mark its position. In a person, this will usually
+   	be centered at the bottom. For a car, it's a bit further up, and for a bird,
+   	it would be way at the bottom of the image.
+
+   	DIRECTION is the direction that this image is facing, where 0 is N, 1 is NE,
+   	2 is E, etc.. until 7, which is NW.
+   	
+   This means that for each sprite, you will have a set of files of the type:
+   		CarYellow-12.11-0.png
+		CarYellow-12.11-1.png
+		CarYellow-12.11-2.png
+		CarYellow-12.11-3.png
+		CarYellow-12.11-4.png
+		CarYellow-12.11-5.png
+		CarYellow-12.11-6.png
+		CarYellow-12.11-7.png
+   And this is per size!
+
+Note also that the sprite name "invisible" is reserved. An invisible agent is simply
+not drawn at all.

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?><!-- Use this file to deploy some handlers/chains and services      --><!-- Two ways to do this:                                           --><!--   java org.apache.axis.client.AdminClient deploy.wsdd          --><!--      after the axis server is running                          --><!-- or                                                             --><!--   java org.apache.axis.utils.Admin client|server deploy.wsdd   --><!--      from the same directory that the Axis engine runs         --><deployment xmlns="http://xml.apache.org/axis/wsdd/" xmlns:java="http://xml.apache.org/axis/wsdd/providers/java">
+
+  <!-- Services from SiafuContextWSService WSDL service -->
+
+  <service name="SiafuContextWS" provider="java:RPC" style="wrapped" use="literal">
+      <parameter name="wsdlTargetNamespace" value="http://ws.siafu.nle.nec.de"/>
+      <parameter name="wsdlServiceElement" value="SiafuContextWSService"/>
+      <parameter name="schemaQualified" value="http://ws.siafu.nle.nec.de"/>
+      <parameter name="wsdlServicePort" value="SiafuContextWS"/>
+      <parameter name="className" value="de.nec.nle.siafu.ws.SiafuContextWS"/>
+      <parameter name="wsdlPortType" value="SiafuContextWS"/>
+      <parameter name="typeMappingVersion" value="1.2"/>
+      <operation xmlns:operNS="http://ws.siafu.nle.nec.de" name="setAgentContext" qname="operNS:setAgentContext" soapAction="">
+        <parameter xmlns:pns="http://ws.siafu.nle.nec.de" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:name" type="tns:string"/>
+        <parameter xmlns:pns="http://ws.siafu.nle.nec.de" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:variable" type="tns:string"/>
+        <parameter xmlns:pns="http://ws.siafu.nle.nec.de" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:value" type="tns:string"/>
+      </operation>
+      <operation xmlns:operNS="http://ws.siafu.nle.nec.de" name="setAgentsMultipleContext" qname="operNS:setAgentsMultipleContext" soapAction="">
+        <parameter xmlns:pns="http://ws.siafu.nle.nec.de" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:name" type="tns:string"/>
+        <parameter xmlns:pns="http://ws.siafu.nle.nec.de" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:variable" type="tns:string"/>
+        <parameter xmlns:pns="http://ws.siafu.nle.nec.de" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:value" type="tns:string"/>
+      </operation>
+      <operation xmlns:operNS="http://ws.siafu.nle.nec.de" xmlns:retNS="http://ws.siafu.nle.nec.de" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="getAgentContext" qname="operNS:getAgentContext" returnQName="retNS:getAgentContextReturn" returnType="rtns:string" soapAction="">
+        <parameter xmlns:pns="http://ws.siafu.nle.nec.de" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:name" type="tns:string"/>
+        <parameter xmlns:pns="http://ws.siafu.nle.nec.de" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:context" type="tns:string"/>
+      </operation>
+      <operation xmlns:operNS="http://ws.siafu.nle.nec.de" xmlns:retNS="http://ws.siafu.nle.nec.de" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="getAgentMultipleContext" qname="operNS:getAgentMultipleContext" returnQName="retNS:getAgentMultipleContextReturn" returnType="rtns:string" soapAction="">
+        <parameter xmlns:pns="http://ws.siafu.nle.nec.de" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:name" type="tns:string"/>
+        <parameter xmlns:pns="http://ws.siafu.nle.nec.de" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:context" type="tns:string"/>
+      </operation>
+      <operation xmlns:operNS="http://ws.siafu.nle.nec.de" xmlns:retNS="http://ws.siafu.nle.nec.de" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="findNearbyAgents" qname="operNS:findNearbyAgents" returnQName="retNS:findNearbyAgentsReturn" returnType="rtns:string" soapAction="">
+        <parameter xmlns:pns="http://ws.siafu.nle.nec.de" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:agent" type="tns:string"/>
+        <parameter xmlns:pns="http://ws.siafu.nle.nec.de" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:dist" type="tns:int"/>
+      </operation>
+      <operation xmlns:operNS="http://ws.siafu.nle.nec.de" xmlns:retNS="http://ws.siafu.nle.nec.de" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="findNearbyPlaces" qname="operNS:findNearbyPlaces" returnQName="retNS:findNearbyPlacesReturn" returnType="rtns:string" soapAction="">
+        <parameter xmlns:pns="http://ws.siafu.nle.nec.de" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:agent" type="tns:string"/>
+        <parameter xmlns:pns="http://ws.siafu.nle.nec.de" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:dist" type="tns:int"/>
+      </operation>
+      <parameter name="allowedMethods" value="setAgentContext findNearbyAgents getAgentContext setAgentsMultipleContext getAgentMultipleContext findNearbyPlaces"/>
+
+  </service>
+</deployment>

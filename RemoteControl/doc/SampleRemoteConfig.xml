@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rc:remoteControl addIconsToButtons="true"
+	xmlns:rc="http://nle.nec.de/RemoteControlSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://nle.nec.de/RemoteControlSchema RemoteControlSchema.xsd ">
+	<rc:title>Sample Remote</rc:title>
+	<rc:server>
+		<rc:hostName>localhost</rc:hostName>
+		<rc:port>4444</rc:port>
+	</rc:server>
+	<rc:fontSize>12</rc:fontSize>
+	<rc:button>
+		<rc:commands>
+			<rc:command>move agnes 35.72279202279202 139.65937499999998</rc:command>
+			<rc:command>move Ralf 36.72279202279202 140.65937499999998</rc:command>
+		</rc:commands>
+		<rc:caption>Move Agnes and Ralf</rc:caption>
+	</rc:button>
+
+	<rc:button>
+		<rc:commands>
+			<rc:command>setcontext Agnes Language Text:English</rc:command>
+		</rc:commands>
+		<rc:caption>Set Agnes' Language</rc:caption>
+	</rc:button>
+
+	<!-- Optional reset button -->
+	<rc:resetButton>
+		<!-- Commands to reset the simulation -->
+		<rc:commands>
+			<rc:command>move agnes 0 0</rc:command>
+		</rc:commands>
+	</rc:resetButton>
+	
+	<!-- Optional logo: takes a URL. Can be relative from the remote install folder -->
+	<rc:logo>file:doc/siafuLogo.png</rc:logo>
+</rc:remoteControl>

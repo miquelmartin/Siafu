@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="lib" path="lib/swt/linux/swt.jar"/>
+	<classpathentry kind="lib" path="lib/logging-log4j_1.2.13/log4j-1.2.13.jar"/>
+	<classpathentry kind="lib" path="lib/xerces-2_9_0/xercesImpl.jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

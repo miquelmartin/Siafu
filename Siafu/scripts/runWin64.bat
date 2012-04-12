@@ -1,0 +1,1 @@
+java -Xmx512m -classpath lib/org.eclipse.swt.win64.jar;Siafu.jar;lib/org.apache.commons.collections-3.2.1.jar;lib/org.apache.commons.configuration-1.6.0.jar;lib/org.apache.commons.lang-2.4.0.jar;lib/org.apache.commons.logging-1.1.1.jar de.nec.nle.siafu.control.Siafu

@@ -1,0 +1,35 @@
+Siafu, an Open Source Context Simulator
+=======================================
+
+Original author:
+Miquel Martin <miquel.martin@netlab.nec.de>
+	XMPP: miquel@jabber.org
+	MSN:  miquel_m@hotmail.com
+	ICQ:  353758524
+	AIM:  miquelmartin07
+	web:  http://miquelmartin.org
+
+Contributors:
+2008-07: Kostas Oikonomou - bug hunting/fixing deep in the Gradient + 
+Place classes
+(https://sourceforge.net/users/koikonomou/)
+
+2008-08: Julien B - Fixed an OSX issue whereby all threads ran as 
+daemons and Siafu terminated prematurely 
+(https://sourceforge.net/users/gimmecat)
+
+Art used in Siafu:
+========================================
+The play and stop buttons belong to the Glaze collection,
+available at:
+http://kde-look.org/content/show.php/Glaze?content=23966
+
+The lady, house and overlay buttons belong to the Nuvox, 
+Futursoft and Ekisho icon themes, respectively, available at:
+http://kde-look.org/content/show.php/nuvoX?content=38467
+http://kde-look.org/content/show.php/Futurosoft+Icons+?content=50667
+http://kde-look.org/content/show.php/Ekisho_Project?content=55588
+
+The note icon (green star in a green circle) belongs to the standard Gnome iconset as provided by Ubuntu 10.10
+
+Siafu uses the SWT toolkit from http://www.eclipse.org/swt/

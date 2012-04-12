@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+ * Copyright NEC Europe Ltd. 2006-2007
+ * 
+ * This file is part of the context simulator called Siafu.
+ * 
+ * Siafu is free software; you can redistribute it and/or modify it under the
+ * terms of the GNU General Public License as published by the Free Software
+ * Foundation; either version 2 of the License, or (at your option) any later
+ * version.
+ * 
+ * Siafu is distributed in the hope that it will be useful, but WITHOUT ANY
+ * WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
+ * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
+ * details.
+ * 
+ * You should have received a copy of the GNU General Public License along
+ * with this program. If not, see <http://www.gnu.org/licenses/>.
+ -->
+
+<project basedir="." default="release" name="simulation">
+
+	<property name="name" value="Glasgow" />
+	<property name="jarFile" value="${name}.jar" />
+	<property name="siafuJar" value="../Siafu/release/Siafu.jar" />
+
+	<target name="clean">
+		<delete dir="bin" />
+		<delete dir="doc/api" />
+		<delete dir="release" />
+	</target>
+
+	<target name="help">
+		<echo>
+                Syntax:
+                        ant -DsiafuJar=(path to Siafu.jar)
+                        </echo>
+	</target>
+
+
+	<target name="build">
+		<echo message="building ${name}" />
+		<mkdir dir="bin" />
+		<copy todir="bin/res">
+			<fileset dir="src/res" />
+		</copy>
+		<copy todir="bin/etc">
+			<fileset dir="src/etc" />
+		</copy>
+
+		<javac srcdir="src" destdir="bin" includes="**/*.java">
+
+			<classpath>
+				<fileset file="${siafuJar}">
+					<include name="**/*.jar" />
+				</fileset>
+			</classpath>
+		</javac>
+	</target>
+
+	<target name="release" depends="build">
+		<mkdir dir="release" />
+		<jar file="release/${jarFile}" compress="true">
+			<fileset dir="bin" />
+			<fileset dir="src">
+				<include name="**/*.java" />
+			</fileset>
+		</jar>
+	</target>
+
+
+	<target name="javadoc">
+		<delete dir="doc/api" />
+		<mkdir dir="doc/api" />
+		<javadoc destdir="doc/api" sourcepath="src" author="true" use="true" windowtitle="Siafu API" packagenames="de.nec.nle.siafu.*">
+			<doctitle>${name} javadoc. A Siafu simulation</doctitle>
+			<classpath>
+				<fileset file="${siafuJar}">
+					<include name="**/*.jar" />
+				</fileset>
+			</classpath>
+			<link href="http://siafusimulator.sf.net/javadoc/" offline="true" packagelistloc="../Siafu/doc/api/" />
+		</javadoc>
+	</target>
+
+</project>

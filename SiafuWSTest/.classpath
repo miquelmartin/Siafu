@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/3.8.1"/>
+	<classpathentry kind="lib" path="/SiafuWS/WebContent/WEB-INF/lib/axis.jar"/>
+	<classpathentry kind="lib" path="/SiafuWS/WebContent/WEB-INF/lib/jaxrpc.jar"/>
+	<classpathentry kind="lib" path="/SiafuWS/WebContent/WEB-INF/lib/saaj.jar"/>
+	<classpathentry kind="lib" path="/SiafuWS/WebContent/WEB-INF/lib/wsdl4j-1.5.1.jar"/>
+	<classpathentry kind="lib" path="/SiafuWS/lib/commons-collections-3.1.jar"/>
+	<classpathentry kind="lib" path="/SiafuWS/lib/commons-configuration-1.1.jar"/>
+	<classpathentry kind="lib" path="/SiafuWS/lib/commons-discovery-0.2.jar"/>
+	<classpathentry kind="lib" path="/SiafuWS/lib/commons-lang-2.1.jar"/>
+	<classpathentry kind="lib" path="/SiafuWS/lib/commons-logging-1.0.4.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

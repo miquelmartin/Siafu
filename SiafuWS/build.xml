@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+ * Copyright NEC Europe Ltd. 2006-2007
+ * 
+ * This file is part of the context simulator called Siafu.
+ * 
+ * Siafu is free software; you can redistribute it and/or modify it under the
+ * terms of the GNU General Public License as published by the Free Software
+ * Foundation; either version 2 of the License, or (at your option) any later
+ * version.
+ * 
+ * Siafu is distributed in the hope that it will be useful, but WITHOUT ANY
+ * WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
+ * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
+ * details.
+ * 
+ * You should have received a copy of the GNU General Public License along
+ * with this program. If not, see <http://www.gnu.org/licenses/>.
+ -->
+
+<project basedir="." default="release" name="siafuWS">
+
+	<property name="name" value="SiafuWS" />
+	<property name="jarFile" value="${name}.jar" />
+	<property name="siafuJar" value="../Siafu/release/Siafu.jar" />
+
+	<target name="clean">
+		<delete dir="bin" />
+		<delete dir="doc/api" />
+		<delete dir="release" />
+	</target>
+
+	<target name="help">
+		<echo>
+                Syntax:
+                        ant -DsiafuJar=(path to Siafu.jar)
+                        </echo>
+	</target>
+
+
+	<target name="build">
+		<echo message="No build script for the WS. Please Export the war with eclipse." />
+	</target>
+
+	<target name="release" depends="build">
+		<echo message="No build script for the WS. Please Export the war with eclipse." />
+	</target>
+
+
+	<target name="javadoc">
+		<delete dir="doc/api" />
+		<mkdir dir="doc/api" />
+		<javadoc destdir="doc/api" sourcepath="src" author="true" use="true" windowtitle="Siafu Web Service API" packagenames="de.nec.nle.siafu.*">
+			<doctitle>Siafu Web Service for Siafu, an open source context simulator</doctitle>
+			<classpath>
+				<fileset dir="lib">
+					<include name="**/*.jar" />
+				</fileset>
+			</classpath>
+			<link href="http://jakarta.apache.org/commons/configuration/apidocs_1.3" />
+		</javadoc>
+	</target>
+
+</project>

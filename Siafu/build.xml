@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+ * Copyright NEC Europe Ltd. 2006-2007
+ * 
+ * This file is part of the context simulator called Siafu.
+ * 
+ * Siafu is free software; you can redistribute it and/or modify it under the
+ * terms of the GNU General Public License as published by the Free Software
+ * Foundation; either version 2 of the License, or (at your option) any later
+ * version.
+ * 
+ * Siafu is distributed in the hope that it will be useful, but WITHOUT ANY
+ * WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
+ * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
+ * details.
+ * 
+ * You should have received a copy of the GNU General Public License along
+ * with this program. If not, see <http://www.gnu.org/licenses/>.
+ -->
+
+<project basedir="." default="release" name="Siafu">
+
+	<property name="version" value="1.0.4" />
+
+	<property name="jarFile" value="Siafu.jar" />
+	<property name="tmpFolder" value="../tmp" />
+	<property name="packedReleaseFolder" value="../PackedReleases" />
+
+	<target name="help">
+		<echo>
+	Syntax:
+		ant 
+		</echo>
+	</target>
+
+	<target name="init" depends="">
+		<mkdir dir="bin" />
+	</target>
+
+	<target name="clean" depends="">
+		<delete dir="bin" />
+		<delete dir="doc/api" />
+		<delete dir="release" />
+		<delete dir="${packedReleaseFolder}" />
+	</target>
+
+	<target name="cleanAll" depends="clean">
+		<ant dir="../Simulation-Glasgow" inheritAll="false" antfile="../Simulation-Glasgow/build.xml" target="clean" />
+		<ant dir="../Simulation-Leimen" inheritAll="false" antfile="../Simulation-Leimen/build.xml" target="clean" />
+		<ant dir="../Simulation-Office" inheritAll="false" antfile="../Simulation-Office/build.xml" target="clean" />
+		<ant dir="../Simulation-Testland" inheritAll="false" antfile="../Simulation-Testland/build.xml" target="clean" />
+		<ant dir="../Simulation-Valencia" inheritAll="false" antfile="../Simulation-Valencia/build.xml" target="clean" />
+	</target>
+
+	<target name="build" depends="init">
+		<echo message="building Siafu" />
+		<javac destdir="bin">
+			<src path="src" />
+			<classpath>
+				<fileset dir="lib">
+					<include name="**/*.jar" />
+				</fileset>
+			</classpath>
+		</javac>
+		<copy todir="bin/res">
+			<fileset dir="src/res" />
+		</copy>
+	</target>
+
+	<target name="jar" depends="build, initRelease">
+		<jar compress="true" jarfile="release/${jarFile}">
+			<manifest>
+				<attribute name="Main-Class" value="de.nec.nle.siafu.control.Siafu" />
+				<attribute name="Class-Path" value="lib/windows/swt/swt.jar lib/osIndependent/commons-collections-3.2.jar lib/osIndependent/commons-configuration-1.3.jar lib/osIndependent/commons-lang-2.2.jar lib/osIndependent/commons-logging-1.1.jar" />
+				<attribute name="Sealed" value="false" />
+			</manifest>
+			<fileset dir="bin/" />
+		</jar>
+	</target>
+
+	<target name="initRelease">
+		<mkdir dir="release" />
+	</target>
+
+
+	<target name="copyReleaseLibs" depends="initRelease">
+		<copy todir="release/lib">
+			<fileset dir="lib" >
+				<include name="**/*.jar"/>
+			</fileset>
+		</copy>
+	</target>
+
+	<target name="copyMisc" depends="initRelease">
+		<copy todir="release">
+			<fileset file="AUTHORS.txt" />
+			<fileset file="LICENSE.txt" />
+		</copy>
+	</target>
+
+	<target name="copyScripts" depends="initRelease">
+		<copy todir="release">
+			<fileset file="scripts/*" />
+		</copy>
+	</target>
+
+	<target name="javadoc">
+		<delete dir="doc/api" />
+		<mkdir dir="doc/api" />
+		<javadoc destdir="doc/api" sourcepath="src" author="true" use="true" windowtitle="Siafu API" packagenames="de.nec.nle.siafu.*">
+			<doctitle>Siafu API</doctitle>
+			<classpath>
+				<fileset dir="lib">
+					<include name="**/*.jar" />
+				</fileset>
+			</classpath>
+			<link href="http://help.eclipse.org/stable/nftopic/org.eclipse.platform.doc.isv/reference/api/" />
+			<link href="http://jakarta.apache.org/commons/configuration/apidocs_1.3" />
+		</javadoc>
+	</target>
+
+	<target name="release" depends="jar,copyReleaseLibs,copyScripts,copyMisc">
+		<echo message="Release completed in release" />
+	</target>
+
+	<target name="buildSimulations" depends="jar">
+		<ant dir="../Simulation-Glasgow" inheritAll="false" antfile="../Simulation-Glasgow/build.xml" target="release" />
+		<ant dir="../Simulation-Leimen" inheritAll="false" antfile="../Simulation-Leimen/build.xml" target="release" />
+		<ant dir="../Simulation-Office" inheritAll="false" antfile="../Simulation-Office/build.xml" target="release" />
+		<ant dir="../Simulation-Testland" inheritAll="false" antfile="../Simulation-Testland/build.xml" target="release" />
+		<ant dir="../Simulation-Valencia" inheritAll="false" antfile="../Simulation-Valencia/build.xml" target="release" />
+	</target>
+
+	<target name="releaseZips" depends="release, buildSimulations,javadoc">
+		<delete dir="${packedReleaseFolder}" />
+		<delete dir="${tmpFolder}" />
+
+		<mkdir dir="${packedReleaseFolder}" />
+		<mkdir dir="${tmpFolder}/Siafu-${version}" />
+		<copy todir="${tmpFolder}/Siafu-${version}">
+			<fileset dir="release" />
+		</copy>
+
+		<zip basedir="${tmpFolder}" file="${packedReleaseFolder}/siafu-${version}.zip" />
+
+		<mkdir dir="${tmpFolder}/Siafu-${version}/simulations" />
+		<copy todir="${tmpFolder}/Siafu-${version}/simulations">
+			<fileset file="../Simulation-Glasgow/release/Glasgow.jar" />
+			<fileset file="../Simulation-Leimen/release/Leimen.jar" />
+			<fileset file="../Simulation-Office/release/Office.jar" />
+			<fileset file="../Simulation-Testland/release/Testland.jar" />
+			<fileset file="../Simulation-Valencia/release/Valencia.jar" />
+		</copy>
+
+		<mkdir dir="${tmpFolder}/Siafu-${version}/webservice" />
+		<copy todir="${tmpFolder}/Siafu-${version}/webservice">
+			<fileset file="../SiafuWS/release/SiafuWS.war" />
+		</copy>
+
+		<zip basedir="${tmpFolder}" file="${packedReleaseFolder}/siafu-${version}-full.zip" />
+
+		<delete dir="${tmpFolder}/Siafu-${version}" />
+		<mkdir dir="${tmpFolder}/Siafu-${version}/src" />
+		<copy todir="${tmpFolder}/Siafu-${version}">
+			<fileset file="AUTHORS.txt" />
+			<fileset file="LICENSE.txt" />
+		</copy>
+		<copy todir="${tmpFolder}/Siafu-${version}/src">
+			<fileset dir="src" />
+		</copy>
+
+		<zip basedir="${tmpFolder}" file="${packedReleaseFolder}/siafu-${version}-src.zip" />
+
+		<delete dir="${tmpFolder}/Siafu-${version}" />
+		<mkdir dir="${tmpFolder}/Siafu-${version}" />
+		<copy todir="${tmpFolder}/Siafu-${version}/doc">
+			<fileset dir="doc/" />
+		</copy>
+
+		<zip basedir="${tmpFolder}" file="${packedReleaseFolder}/siafu-${version}-doc.zip" />
+	</target>
+
+</project>

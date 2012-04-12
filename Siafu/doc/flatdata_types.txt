@@ -1,0 +1,25 @@
+FlatData types:
+==============================================================================
+Siafu serializes all the context information using the FlatData classes. You 
+will need these to use the get and set context methods, both directly or
+through most wrappers (like the Web Service wrapper).
+
+Check the javadoc for all the classes that implement Publishable. The 
+constructor that takes a FlatData as input, or the flatten method will show
+you how they work. If you don't want to wade through the code, that's fine
+too, here's a quick reference:
+
+de.nec.nle.siafu.model.Place:name#type#latitude#longitude
+de.nec.nle.siafu.model.Position:Lat#Lon
+TimePeriod:startHour#startMinute#endHour#endMinute
+TextList:string1#string2#...
+Text:string
+IntegerNumber:int
+FloatNumber:float
+EasyTime:HH#MM
+BooleanType:trueorfalse
+
+If you intend on coding your own datatypes, bear in mind that the left hand 
+side of the colon will be the name of the class if the class belongs to the
+package de.nec.nle.siafu.types, and packagename.classname otherwise.
+
