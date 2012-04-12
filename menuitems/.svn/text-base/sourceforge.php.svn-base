@@ -1,2 +1,0 @@
-<div style="float:left">hosted at <a href="https://sourceforge.net/projects/siafusimulator/"><img src="http://sflogo.sourceforge.net/sflogo.php?group_id=198585&amp;type=4" width="125" height="37" border="0" alt="SourceForge.net Logo" /></a></div>
-<div style="clear:both"></div>
