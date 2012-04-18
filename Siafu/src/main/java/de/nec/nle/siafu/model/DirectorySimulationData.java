@@ -128,16 +128,10 @@ public class DirectorySimulationData extends SimulationData {
 	 * @return the InputStream for the requested file
 	 */
 	protected InputStream getFile(final String path) {
-		String absolutePath =
-				dir.getAbsolutePath() + File.separator + path;
-		InputStream file;
-		try {
-			file = new FileInputStream(absolutePath);
-		} catch (FileNotFoundException e) {
+		InputStream file = classLoader.getResourceAsStream(path);
+		if (file == null)
 			throw new RuntimeException("Your simulation data is missing "
 					+ path);
-
-		}
 		return file;
 	}
 }

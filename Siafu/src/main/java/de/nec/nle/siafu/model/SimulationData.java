@@ -49,36 +49,36 @@ import de.nec.nle.siafu.behaviormodels.BaseWorldModel;
 public abstract class SimulationData {
 
 	/** Path to overlay files, which define context variables on the map. */
-	public static final String OVERLAYS_PATH = "res/overlays";
+	public static final String OVERLAYS_PATH = "overlays";
 
 	/**
 	 * Path to place files, which indicate the positions where a place of a
 	 * certain type should be placed.
 	 */
-	public static final String PLACES_PATH = "res/places";
+	public static final String PLACES_PATH = "places";
 
 	/**
 	 * Path to the walls image of the simulation data.
 	 */
-	public static final String WALLS_FILE = "res/map/walls.png";
+	public static final String WALLS_FILE = "map/walls.png";
 
 	/**
 	 * Path to the backgroundimage of the simulation data.
 	 */
-	public static final String BACKGROUND_FILE = "res/map/background.png";
+	public static final String BACKGROUND_FILE = "map/background.png";
 
 	// FIXME: I'd like all the images to be png
 
 	/**
 	 * Path to the simulation configuration.
 	 */
-	public static final String CONFIG_FILE = "etc/config.xml";
+	public static final String CONFIG_FILE = "config.xml";
 
 	/**
 	 * The class loader used to include the simulation behavior classes into
 	 * the classpath.
 	 */
-	private URLClassLoader classLoader;
+	protected URLClassLoader classLoader;
 
 	/**
 	 * The simulation configuration.
