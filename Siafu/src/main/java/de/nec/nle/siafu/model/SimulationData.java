@@ -245,7 +245,6 @@ public abstract class SimulationData {
 			simulationConfig = new XMLConfiguration();
 			try {
 				simulationConfig.load(getFile(CONFIG_FILE));
-				// simulationConfig.load(classLoader.getResource(CONFIG_FILE));
 			} catch (ConfigurationException e) {
 				throw new RuntimeException(
 						"Error reading the simulation config file", e);
