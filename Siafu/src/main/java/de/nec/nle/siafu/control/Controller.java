@@ -65,17 +65,30 @@ public class Controller {
 
 	/** Default value for the TCP listening port. */
 	private static final int DEFAULT_PORT = 4444;
+	
+	/**
+	 * Configuration folder
+	 * 
+	 *   Windows: C:\Documents and Settings\<user>\Application Data\Siafu (XP)
+	 *            C:\Users\<user>\AppData\Roaming\Siafu (Vista, 7)
+	 *   Unix:    /home/<user>/.Siafu
+	 */
+	public static final String CONFIG_PATH = (
+		(System.getProperty("os.name").toLowerCase().startsWith("windows") &&
+		 System.getenv("APPDATA")!=null) ?
+				// Windows
+				System.getenv("APPDATA") + File.separator + "Siafu" :
+				// Unix
+				System.getProperty("user.home") + File.separator + ".Siafu");
 
 	/** Default value for the gradient path. */
 	public static final String DEFAULT_GRADIENT_PATH =
-			System.getProperty("user.home") + File.separator + ".Siafu"
-					+ File.separator + "CalculatedGradients"
-					+ File.separator;
+			CONFIG_PATH + File.separator + "CalculatedGradients" +
+			File.separator;
 
 	/** Default config file location. */
 	public static final String DEFAULT_CONFIG_FILE =
-			System.getProperty("user.home") + File.separator + ".Siafu"
-					+ File.separator + "config.xml";
+			CONFIG_PATH	+ File.separator + "config.xml";
 
 	/**
 	 * The configuration file for the simulator.
