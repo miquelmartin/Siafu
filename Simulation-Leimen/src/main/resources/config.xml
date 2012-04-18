@@ -22,7 +22,7 @@
 	</starttime>
 	<!-- Relative path to the sprites (movable characters) in the simulation.
 		Suggestion: choose a size that fits your population -->
-	<spritepath>res/sprites/19x11</spritepath>
+	<spritepath>sprites/19x11</spritepath>
 	<!-- Models to employ. The Empty models do nothing. Please ensure 
 		that the class you specify is in the classpath -->
 	<!-- What are the classes that model the behaviour of agents, the world 
