@@ -23,6 +23,7 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Set;
 
+import org.eclipse.jface.dialogs.MessageDialog;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.graphics.Image;
 import org.eclipse.swt.layout.GridData;
@@ -288,14 +289,23 @@ public class GUI implements Runnable {
 			switch (status) {
 			case STATE_STANDBY:
 				if (simulationDataPath != null) {
-					control.startSimulation(simulationDataPath);
-					mainMenu.simulationChangeMenuesEnabled(false);
-					status = STATE_AWAITING_SIMULATION;
-					resetSimulationDataChanged();
-					if(standByComposite!=null){
-						standByComposite.dispose();
+					try {
+						control.startSimulation(simulationDataPath);
+						mainMenu.simulationChangeMenuesEnabled(false);
+						status = STATE_AWAITING_SIMULATION;
+						resetSimulationDataChanged();
+						if(standByComposite!=null){
+							standByComposite.dispose();
+						}
+						loadingComposite = new LoadingComposite(shell);
+					} catch(RuntimeException e) {
+						MessageDialog dialog = new MessageDialog(shell, "Oops",
+								null,
+							    e.getMessage(),
+							    MessageDialog.ERROR, new String[] { "Close" }, 0);
+						dialog.open();
+						reportSimulationDataChange(null);
 					}
-					loadingComposite = new LoadingComposite(shell);
 				}
 				break;
 			case STATE_AWAITING_SIMULATION:

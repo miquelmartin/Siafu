@@ -131,7 +131,7 @@ public class DirectorySimulationData extends SimulationData {
 		InputStream file = classLoader.getResourceAsStream(path);
 		if (file == null)
 			throw new RuntimeException("Your simulation data is missing "
-					+ path);
+					+ path + ". Perhaps you opened the wrong directory?");
 		return file;
 	}
 }

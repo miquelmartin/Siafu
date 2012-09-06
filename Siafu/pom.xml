@@ -86,6 +86,13 @@
 			<artifactId>${swt.artifactId}</artifactId>
 			<version>3.6.2</version>
 		</dependency>
+		
+		<dependency>
+			<groupId>swt</groupId>
+			<artifactId>jface</artifactId>
+			<version>3.0.1</version>
+		</dependency>
+		            
 
 
 	</dependencies>
