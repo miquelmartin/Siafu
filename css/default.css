@@ -1,0 +1,399 @@
+
+/*
+Design by Free CSS Templates
+http://www.freecsstemplates.org
+Released for free under a Creative Commons Attribution 2.5 License
+*/
+
+* { font-family: 'Trebuchet MS', Arial, Helvetica, sans-serif; }
+
+body {
+	margin: 0px 0;
+	padding: 0;
+	background: #E6E6E6;
+	font-size: 14px;
+	color: #6B6B6B;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	margin: 0;
+	padding: 0;
+	font-weight: normal;
+	color: #000000;
+}
+
+h1 { margin-bottom: 10px; }
+
+h2 {
+	margin-bottom: 10px;
+	border-bottom: 1px solid #F4F4F4;
+	font-size: 26px;
+}
+
+h3 {
+	margin-bottom: 10px;
+	padding-bottom: 0px;
+	margin-top: 30px;
+	font-size: 16px;
+	border-bottom: 1px solid #E4E4E4;
+	color: #6B6B6B;
+}
+
+h4 {
+	margin-bottom: 10px;
+	padding-bottom: 0px;
+	margin-top: 30px;
+	font-size: 16px;
+	border-bottom: 1px solid #E4E4E4;
+	color: #000;
+	font-weight:bold;
+}
+
+h6 {
+	text-transform:none;
+	font-size: 14px;
+}
+
+h6.sub {
+	background:none;
+	border-bottom: none;
+	margin-bottom: 2px;
+	border-top: 1px solid #F4F4F4;
+}
+
+li { list-style-image: url(/images/bullet.gif); }
+
+ul {
+	margin-left: 20px;
+	padding-left: 0;
+	list-style: none;
+}
+
+ul span { font-weight: bold; }
+
+#colTwo ul { margin-left:auto; }
+
+#colTwo li {
+	list-style-image:none;
+	margin-bottom:5px;
+}
+
+p, ol, ul, blockquote { line-height: 24px; }
+
+a.external {
+	background:url(/images/external.gif) center right no-repeat;
+	padding-right: 13px;
+}
+
+a.pdf {
+	background:url(/images/pdf.gif) left no-repeat;
+	padding-left: 20px;
+}
+
+a.bibtex {
+	background:url(/images/bibtex.gif) left no-repeat;
+	padding-left: 23px;
+}
+
+a.abstract {
+	background:url(/images/lupa.gif) left no-repeat;
+	padding-left: 26px;
+}
+
+a {
+	color: #EC5600;
+	text-decoration: none;
+}
+
+a:hover { text-decoration: underline; }
+
+img { border: none; }
+
+#textfieldsearch {
+	width: 175px;
+	padding: 2px;
+	margin-bottom: 10px;
+	border: 1px solid #AAA;
+	border-right-color: #F6F6F6;
+	border-bottom-color: #F6F6F6;
+}
+
+#submitsearch {
+	border: 1px solid #EBEBEB;
+	border-bottom-color: #DDDDDD;
+	background: #FBFBFB url(/images/img7.gif) repeat-x;
+	text-transform: lowercase;
+	font-size: 12px;
+	color: #7A7A7A;
+}
+
+/* Posted */
+
+.posted {
+	height: 33px;
+	margin: 0 0 30px 0;
+	padding: 10px 15px 0 15px;
+	background: url(/images/img6.gif) repeat-x;
+	border-bottom: 1px solid #F2F2F2;
+}
+
+.posted p {
+	float: left;
+	margin: 0;
+}
+
+.posted .comments { float: right; }
+
+.posted a { color: #717171; }
+
+/* Header */
+
+#header {
+	width: 917px;
+	height: 324px;
+	margin: 0 auto;
+	background: url(/images/siafuTop.jpg) no-repeat;
+}
+
+/* Logo */
+
+#logo {
+	float: left;
+	padding: 0 0 0 0;
+	background: url(/images/img1.gif) no-repeat;
+}
+
+#logo h1 {
+	padding: 70px 0 0 40px;
+	text-transform:none;
+	font-weight: bold;
+	font-size: 55px;
+	line-height: 35px;
+	color: #000000;
+	border: none;
+}
+
+#logo h2 {
+	padding: 0px 0 0 40px;
+	font-size: 35px;
+	color: #999;
+	line-height: 35px;
+	border: none;
+}
+
+#logoright {
+	clear: right;
+	height: 45px;
+	background: url(/images/img3.gif) no-repeat right top;
+}
+
+/* Menu */
+
+#menu {
+	clear: both;
+	padding: 30px 0px 0px 40px;
+	width: 500px;
+}
+
+#menu ul {
+	margin: 0;
+	padding: 0;
+	list-style: none;/*	border-top: thin solid #666666;
+	border-bottom: thin solid #666666;*/
+}
+
+#menu li { display: inline; }
+
+#menu a {
+	padding: 0 5px 0px 5px;
+	border-left: 2px solid #DBDBDB;
+	text-decoration: none;
+	font-size: 18px;
+	color: #3B3B3B;
+}
+
+#menu .first a {
+	border: none;
+	padding: 0;
+}
+
+/* Splash */
+
+#splash {
+	width: 877px;
+	height: 170px;
+	margin: 0 auto;
+	background: url(/images/img5.gif) repeat-x left bottom;
+	border-right: 20px solid #FFFFFF;
+	border-left: 20px solid #FFFFFF;
+}
+
+/* Content */
+
+#content {
+	width: 847px;
+	min-height: 500px;
+	margin: 0 auto;
+	padding: 0px 35px 0 35px;
+	background: #FFFFFF url(/images/img8.gif) no-repeat left bottom;
+}
+
+#colOne {
+	float: left;
+	width: 620px;
+}
+
+#colTwo {
+	float: right;
+	width: 185px;
+	padding: 5px 0 0 0;
+}
+
+/* Footer */
+
+#footer { }
+
+#footer p {
+	text-align: center;
+	color: #777777;
+}
+
+#footer a { color: #5D5D5D; }
+
+div.description { margin-bottom: 15px; }
+
+div.topic { }
+
+div.abstract {
+	padding-left: 10px;
+	padding-right: 10px;
+	text-align:justify;
+	margin-bottom: 15px;
+}
+
+.contact td.icon {
+	text-align:right;
+	padding: 20px 15px 5px 10px;
+	vertical-align:top;
+}
+
+a.button {
+	font-weight:bold;
+	padding: 5px;
+}
+
+a.button:hover { text-decoration:none; }
+
+/* Simulation previews */
+
+table#simulationlist {
+	border-collapse:separate;
+	border-spacing: 30px 50px;
+}
+
+table.center {
+	margin-left:auto;
+	margin-right:auto;
+}
+
+#simulationlist a {
+	font-size: 30px;
+	color: #333333;
+}
+
+#simulationlist a:hover { text-decoration:none; }
+
+#simulationlist td {
+	text-align:left;
+	border-bottom: 3px #999 solid;
+	color: #333333;
+	padding: 0px 0px 0px 0px;
+	vertical-align: bottom;
+}
+
+.simulation h1 {
+	text-transform:none;
+	font-size:30px;
+	margin-bottom: 0px;
+}
+
+td.simpreview {
+	vertical-align: top;
+	padding-top: 10px;
+	padding-right: 10px;
+}
+
+img.screenshot {
+	float:right;
+	border:thick;
+}
+
+div.sidepic {
+	font-size:12px;
+	text-align: center;
+	margin-right: 15px;
+	margin-left: 15px;
+}
+
+.sidepic a { color: #6B6B6B; }
+
+.sidepic a:hover {
+	color: #6B6B6B;
+	text-decoration:none;
+}
+
+#pager {
+	text-align:center;
+	margin-right:auto;
+	margin-left:auto;
+	padding-top: 20px;
+	padding-bottom: 20px;
+	font-weight:bold;
+	clear:both;
+}
+
+img.border { border: 1px #666666 solid; }
+
+div.code {
+	width: 500px;
+	margin-left: auto;
+	margin-right: auto;
+	border: 1px #F90 solid;
+	background: #FFFFF9;
+	padding: 5px 10px 5px 10px;
+	font-size: 12px;
+}
+
+.faq li {
+	line-height: 20px;
+	padding:0px;
+	color:#000;
+}
+
+.faq p {
+	line-height: 20px;
+	padding:0px;
+	color:#6B6B6B;
+}
+
+table.downloadcontainer{
+	padding-top:10px;
+	margin-left:auto;
+	margin-right:auto;
+	width:500px;
+}
+
+table.downloadcontainer td.first{
+padding-left:15px;
+}
+
+a.download {
+	font-size:20px;
+
+}
+
+a.maindl { font-size:38px; 	font-weight: bold;}
+
+table.download a:hover { text-decoration:none; }
+
+table.download td { vertical-align:top; }
