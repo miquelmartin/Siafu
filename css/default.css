@@ -397,3 +397,8 @@ a.maindl { font-size:38px; 	font-weight: bold;}
 table.download a:hover { text-decoration:none; }
 
 table.download td { vertical-align:top; }
+
+.sidebar-download>img {
+	width: 24px;
+	height: 24px;
+}
