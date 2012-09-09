@@ -273,7 +273,7 @@ div.abstract {
 
 .contact td.icon {
 	text-align:right;
-	padding: 20px 15px 5px 10px;
+	padding: 10px 15px 5px 10px;
 	vertical-align:top;
 }
 
@@ -399,6 +399,7 @@ table.download a:hover { text-decoration:none; }
 table.download td { vertical-align:top; }
 
 .sidebar-download>img {
+	top: 3px;
 	width: 24px;
 	height: 24px;
 }
