@@ -7,7 +7,7 @@
 		Hint: http://www.fcc.gov/mb/audio/bickel/DDDMMSS-decimal.html  -->
 	<calibration>
 		<topright    latitude="49.003535" longitude="8.006958"/>
-		<bottomright latitude="49.003535" longitude="8.006958"/>
+		<bottomright latitude="49.003410" longitude="8.006958"/>
 		<bottomleft  latitude="49.003410"  longitude="8.006800"/>
 	</calibration>
 	<!-- How many seconds does each simulation iteration represent-->
