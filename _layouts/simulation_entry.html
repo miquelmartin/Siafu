@@ -1,0 +1,47 @@
+---
+layout: default
+---
+ 
+<h1>Simulation: {{ page.title }}</h1>
+
+<table class="simulation">
+  <tr>
+    <td class="simpreview"><a href="/images/simulations/full/{{ page.mainscreenshotFull }}"><img src="/images/simulations/preview/{{ page.mainscreenshot }}"/></a></td>
+    <td class="simdescription">
+      <h1></h1>
+      <ul>
+        <li><span>Type of scenario:</span>{{ page.scenariotype }}</li>
+        <li><span>Agents:</span>{{ page.agents }}</li>
+        <li><span>Highlights:</span>{{ page.highlight }}</li>
+        <li><span>License:</span>{{ page.license }}</li>
+        <li><span>Website:</span> <a class="external" href="{{ page.websitelinks }}"> {{ page.website }}</a></li>
+        <li><span>Download link:</span> <a class="external" href="{{ page.downloadlink }}">here</a></li>
+      </ul>
+      {{ content }}</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>
+      <table width="100%">
+        <tr>
+          <td style="vertical-align:top;">
+            <p style="font-weight:bold">Further screenshots:</p>
+          </td>
+          <td width="100%">
+          	{% for s in page.screenshots %}
+                <a href="/images/simulations/full/{{ s }}" >
+                <img class="screenshot" src="/images/simulations/preview/{{ s }}"/>
+                </a>
+	        {% endfor %}
+
+            <p style="clear:both; text-align:right"> Click on the screenshots to enlarge. </p>
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td> </td>
+  </tr>
+</table>
