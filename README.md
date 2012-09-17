@@ -7,10 +7,10 @@ Siafu is a versatile, large-scale Context Simulator written in Java. Download it
 Glad you asked! Essentially: visualize your context information, generate datasets for machine learning, test and demonstrate your applications. 
 
 Siafu can generate its own context and at the same time incorporate the one you obtain from your sensors. The information can then be visualized with a user interface, or you can generate datasets for machine learning. By plugging an application to it, you can test and demonstrate the effects of context changes on it. Here's how a setup can look like:
-		<name>Siafu datatypes library</name>
 
-![Siafu typical setups image](http://siafusimulator.org/images/usage.gif)
-
+<p algin="center">
+	<img alt="Siafu typical setups image" src=http://siafusimulator.org/images/usage.gif />
+</p>
 
 Grab Siafu, get one of the existing Simulations or create your own using this tutorial. Siafu is released under the [GPL license](http://www.gnu.org/licenses/gpl.html), enjoy and tell us how it worked out!
 
@@ -23,4 +23,6 @@ Make sure to check the project's website at [siafusimulator.org](http://siafusim
 
 Have a lot of fun!
 
-The Siafu authors
+<p align="right">
+- The Siafu team
+</p>
