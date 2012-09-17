@@ -8,7 +8,7 @@ Glad you asked! Essentially: visualize your context information, generate datase
 
 Siafu can generate its own context and at the same time incorporate the one you obtain from your sensors. The information can then be visualized with a user interface, or you can generate datasets for machine learning. By plugging an application to it, you can test and demonstrate the effects of context changes on it. Here's how a setup can look like:
 
-<p algin="center">
+<p align="center">
 	<img alt="Siafu typical setups image" src=http://siafusimulator.org/images/usage.gif />
 </p>
 
