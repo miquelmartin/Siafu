@@ -13,4 +13,30 @@
 		<module>Simulations</module>
 	</modules>
 
+	<build>
+		<plugins>
+			<plugin>
+				<artifactId>maven-assembly-plugin</artifactId>
+        			<version>2.3</version>
+        			<configuration>
+          				<descriptors>
+            					<descriptor>assembly.xml</descriptor>
+         				</descriptors>
+					<attach>false</attach>
+					<appendAssemblyId>false</appendAssemblyId>
+					<finalName>Siafu-${project.version}</finalName>
+        			</configuration>
+				<executions>
+					<execution>
+						<id>ReleaseFolder</id>
+						<phase>package</phase>
+						<goals>
+							<goal>single</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+	</build>
+
 </project>

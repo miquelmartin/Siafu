@@ -6,6 +6,13 @@
 	<version>1.0.6-SNAPSHOT</version>
 	<packaging>pom</packaging>
 
+	<parent>
+		<groupId>Siafu</groupId>
+		<artifactId>MavenParent</artifactId>
+		<version>1.0.6-SNAPSHOT</version>
+		<relativePath>../MavenParent</relativePath>
+	</parent>
+
 	<modules>
 		<module>Simulation-Glasgow</module>
 		<module>Simulation-Leimen</module>
@@ -14,4 +21,29 @@
 		<module>Simulation-Valencia</module>
 	</modules>
 
+	<build>
+		<plugins>
+			<plugin>
+				<artifactId>maven-assembly-plugin</artifactId>
+        			<version>2.3</version>
+        			<configuration>
+          				<descriptors>
+            					<descriptor>assembly.xml</descriptor>
+         				</descriptors>
+					<attach>false</attach>
+					<appendAssemblyId>false</appendAssemblyId>
+					<finalName>Simulations</finalName>
+        			</configuration>
+				<executions>
+					<execution>
+						<id>ReleaseFolder</id>
+						<phase>package</phase>
+						<goals>
+							<goal>single</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+	</build>
 </project>

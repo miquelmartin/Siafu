@@ -11,6 +11,37 @@
 		<relativePath>../MavenParent</relativePath>
 	</parent>
 	
+	<build>
+		<plugins>
+			<plugin>
+				<artifactId>maven-assembly-plugin</artifactId>
+        			<version>2.3</version>
+        			<configuration>
+          				<descriptors>
+            					<descriptor>assembly.xml</descriptor>
+         				</descriptors>
+					<attach>false</attach>
+					<appendAssemblyId>false</appendAssemblyId>
+					<finalName>Siafu</finalName>
+					<archive>
+						<manifest>
+							<mainClass>de.nec.nle.siafu.control.Siafu</mainClass>
+						</manifest>
+					</archive>
+        			</configuration>
+				<executions>
+					<execution>
+						<id>ReleaseFolder</id>
+						<phase>package</phase>
+						<goals>
+							<goal>single</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+	</build>
+
 	<dependencies>
 		<dependency>
 			<groupId>commons-collections</groupId>
@@ -38,4 +69,5 @@
 			<artifactId>jface</artifactId>
 		</dependency>
 	</dependencies>
+
 </project>
