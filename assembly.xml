@@ -1,1 +1,31 @@
-TestsProject/assembly.xml
+<assembly
+	xmlns="http://maven.apache.org/plugins/maven-assembly-plugin/assembly/1.1.2"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/plugins/maven-assembly-plugin/assembly/1.1.2 http://maven.apache.org/xsd/assembly-1.1.2.xsd">
+	<id>ReleaseFolder</id>
+	<formats><format>dir</format></formats>
+	<includeBaseDirectory>true</includeBaseDirectory>
+	<baseDirectory></baseDirectory>
+
+	<fileSets>
+		<fileSet>
+			<directory>Simulations/target/Simulations</directory>
+			<outputDirectory>simulations</outputDirectory>
+		</fileSet>
+		<fileSet>
+			<directory>Siafu/target/</directory>
+			<includes>
+				<include>Siafu.jar</include>
+			</includes>
+			<outputDirectory></outputDirectory>
+		</fileSet>
+		<fileSet>
+			<directory>DataTypes/target/</directory>
+			<includes>
+				<include>*.jar</include>
+			</includes>
+			<outputDirectory>tools</outputDirectory>
+		</fileSet>
+	</fileSets>
+
+</assembly>
