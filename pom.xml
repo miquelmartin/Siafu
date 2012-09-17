@@ -9,11 +9,7 @@
 	<modules>
 		<module>Siafu</module>
 		<module>MavenParent</module>
-		<module>Simulation-Glasgow</module>
-		<module>Simulation-Leimen</module>
-		<module>Simulation-Office</module>
-		<module>Simulation-Testland</module>
-		<module>Simulation-Valencia</module>
+		<module>Simulations</module>
 	</modules>
 
 </project>
