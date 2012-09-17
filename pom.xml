@@ -7,8 +7,9 @@
 	<packaging>pom</packaging>
 
 	<modules>
-		<module>Siafu</module>
 		<module>MavenParent</module>
+		<module>Siafu</module>
+		<module>DataTypes</module>
 		<module>Simulations</module>
 	</modules>
 
