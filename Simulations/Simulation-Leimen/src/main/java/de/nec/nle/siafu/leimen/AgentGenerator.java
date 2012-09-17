@@ -160,8 +160,8 @@ final class AgentGenerator {
 	 * @param types the ArrayList containing the types
 	 * @return the randomly chosen type
 	 */
-	private static Text getRandomType(final ArrayList types) {
-		return (Text) types.get(rand.nextInt(types.size()));
+	private static Text getRandomType(final ArrayList<Text> types) {
+		return types.get(rand.nextInt(types.size()));
 	}
 
 }

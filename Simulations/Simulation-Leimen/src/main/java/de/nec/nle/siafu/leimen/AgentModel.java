@@ -265,7 +265,7 @@ public class AgentModel extends BaseAgentModel {
 	 * @param types the list of possible types to rate against
 	 * @return the party animal index, between 0 and 4, both included
 	 */
-	protected int getIndex(final Text value, final ArrayList types) {
+	protected int getIndex(final Text value, final ArrayList<Text> types) {
 		for (int i = 0; i < types.size(); i++) {
 			if (value.equals(types.get(i))) {
 				return i;

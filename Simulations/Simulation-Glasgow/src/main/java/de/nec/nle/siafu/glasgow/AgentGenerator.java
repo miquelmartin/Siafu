@@ -51,10 +51,10 @@ final class AgentGenerator {
 
 	/** Maximum agent's age. */
 	private static final int MAX_AGE = 60;
-	
+
 	/** Minimum agent's age. */
 	private static final int MIN_AGE = 10;
-	
+
 	/** A random number generator. */
 	private static Random rand = new Random();
 
@@ -65,12 +65,14 @@ final class AgentGenerator {
 	/**
 	 * Create a population made up of <code>size</code> random agents.
 	 * 
-	 * @param size the population size
-	 * @param world the world object of the whole simulation
+	 * @param size
+	 *            the population size
+	 * @param world
+	 *            the world object of the whole simulation
 	 * @return an ArrayList with the collection of agents
 	 */
 	public static ArrayList<Agent> createRandomPopulation(final int size,
-		final World world) {
+			final World world) {
 		ArrayList<Agent> population = new ArrayList<Agent>(size);
 
 		for (int i = 0; i < size; i++) {
@@ -82,15 +84,16 @@ final class AgentGenerator {
 
 	/**
 	 * Create a random agent that fits the Glasgow simulation.
-	 * @param world the world the agent will live in
+	 * 
+	 * @param world
+	 *            the world the agent will live in
 	 * @return the new agent
 	 */
 	public static Agent createRandomAgent(final World world) {
 		Agent a;
 		try {
-			a =
-					new Agent(world.getRandomPlaceOfType("Building")
-							.getPos(), "HumanGreen", world);
+			a = new Agent(world.getRandomPlaceOfType("Building").getPos(),
+					"HumanGreen", world);
 		} catch (PlaceNotFoundException e) {
 			throw new RuntimeException(
 					"You didn't define the \"Bulding\" type of places", e);
@@ -109,10 +112,11 @@ final class AgentGenerator {
 	/**
 	 * Return a random element from the given array list.
 	 * 
-	 * @param types the ArrayList containing the types
+	 * @param types
+	 *            the ArrayList containing the types
 	 * @return the randomly chosen type
 	 */
-	private static Text getRandomType(final ArrayList types) {
-		return (Text) types.get(rand.nextInt(types.size()));
+	private static Text getRandomType(final ArrayList<Text> types) {
+		return types.get(rand.nextInt(types.size()));
 	}
 }
