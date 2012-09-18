@@ -20,7 +20,7 @@
 			<outputDirectory></outputDirectory>
 		</fileSet>
 		<fileSet>
-			<directory>DataTypes/target/</directory>
+			<directory>Datatypes/target/</directory>
 			<includes>
 				<include>*.jar</include>
 			</includes>

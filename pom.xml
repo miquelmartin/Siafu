@@ -9,7 +9,7 @@
 	<modules>
 		<module>MavenParent</module>
 		<module>Siafu</module>
-		<module>DataTypes</module>
+		<module>Datatypes</module>
 		<module>Simulations</module>
 	</modules>
 
