@@ -440,7 +440,6 @@ public class GUI implements Runnable {
 		reportSimulationDataChange(simulationPath);
 		// Force the first redraw
 		simulationDataChanged = true;
-		display = new Display();
 	}
 
 	/**
@@ -597,17 +596,13 @@ public class GUI implements Runnable {
 	 * canvas.
 	 */
 	public void run() {
+		display = Display.getCurrent();
 		System.out.println("Starting Siafu...");
-		display.syncExec(new Runnable() {
-			public void run() {
 				createShell();
 				switchToStandByMode();
-
 				display.timerExec(refreshSpeed, refreshSimulationRunnable);
 				swtLoop();
-			}
-		});
-		System.out.println("Siafu ended");
+				System.out.println("Siafu ended");
 	}
 
 	/**
