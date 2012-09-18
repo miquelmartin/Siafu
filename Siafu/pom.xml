@@ -60,9 +60,8 @@
 			<artifactId>commons-lang</artifactId>
 		</dependency>
 		<dependency>
-			<groupId>${swt.groupId}</groupId>
+			<groupId>org.eclipse.swt</groupId>
 			<artifactId>${swt.artifactId}</artifactId>
-			<version>3.6.2</version>
 		</dependency>
 		<dependency>
 			<groupId>swt</groupId>
