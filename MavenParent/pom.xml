@@ -45,6 +45,32 @@
 	
 	<profiles>
 		<profile>
+			<id>linux32</id>
+			<activation>
+				<os>
+					<name>Linux</name>
+					<arch>i386</arch>
+				</os>
+			</activation>
+			<properties>
+				<swt.groupId>org.eclipse.swt</swt.groupId>
+				<swt.artifactId>org.eclipse.swt.gtk.linux.x86</swt.artifactId>
+			</properties>
+		</profile>
+		<profile>
+			<id>linux64</id>
+			<activation>
+				<os>
+					<name>Linux</name>
+					<arch>amd64</arch>
+				</os>
+			</activation>
+			<properties>
+				<swt.groupId>org.eclipse.swt</swt.groupId>
+				<swt.artifactId>org.eclipse.swt.gtk.linux.x86_64</swt.artifactId>
+			</properties>
+		</profile>
+		<profile>
 			<id>mac</id>
 			<activation>
 				<os>
