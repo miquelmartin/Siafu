@@ -20,6 +20,11 @@
 			<outputDirectory></outputDirectory>
 		</fileSet>
 		<fileSet>
+			<directory>Siafu/scripts/</directory>
+			<outputDirectory></outputDirectory>
+			<fileMode>755</fileMode>
+		</fileSet>
+		<fileSet>
 			<directory>Datatypes/target/</directory>
 			<includes>
 				<include>*.jar</include>
