@@ -24,6 +24,7 @@ import java.io.IOException;
 
 import org.apache.commons.configuration.ConfigurationException;
 import org.apache.commons.configuration.XMLConfiguration;
+import org.eclipse.swt.widgets.Display;
 
 import de.nec.nle.siafu.control.progress.ConsoleProgress;
 import de.nec.nle.siafu.control.progress.GUIProgress;
@@ -180,9 +181,8 @@ public class Controller {
 			// If there's a GUI, let it load the
 			// simulation, if it's avaialble
 			gui = new GUI(this, simulationPath);
-			Thread guiThread = new Thread(gui, "GUI thread"); 
-			guiThread.setDaemon(false); 
-			guiThread.start(); 
+			Display display = new Display();
+			display.syncExec(gui);
 		} else if (simulationPath != null) {
 			// Printout to the Console
 			progress = new ConsoleProgress();
