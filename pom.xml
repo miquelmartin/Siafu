@@ -6,6 +6,19 @@
 	<version>1.0.6-SNAPSHOT</version>
 	<packaging>pom</packaging>
 
+	<parent>
+		<groupId>Siafu</groupId>
+		<artifactId>MavenParent</artifactId>
+		<version>1.0.6-SNAPSHOT</version>
+	</parent>
+
+	<!-- SCM tags are not inherited, so this can't go in the parent -->
+	<scm>
+		<connection>scm:git:git@github.com:miquelmartin/Siafu.git</connection>
+		<url>scm:git:git@github.com:miquelmartin/Siafu.git</url>
+		<developerConnection>scm:git:git@github.com:miquelmartin/Siafu.git</developerConnection>
+	</scm>
+		
 	<modules>
 		<module>MavenParent</module>
 		<module>Siafu</module>
@@ -16,16 +29,21 @@
 	<build>
 		<plugins>
 			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-release-plugin</artifactId>
+				<version>2.3.2</version>
+			</plugin>
+			<plugin>
 				<artifactId>maven-assembly-plugin</artifactId>
-        			<version>2.3</version>
-        			<configuration>
-          				<descriptors>
-            					<descriptor>assembly.xml</descriptor>
-         				</descriptors>
+				<version>2.3</version>
+				<configuration>
+					<descriptors>
+						<descriptor>assembly.xml</descriptor>
+					</descriptors>
 					<attach>false</attach>
 					<appendAssemblyId>false</appendAssemblyId>
 					<finalName>Siafu-${project.version}</finalName>
-        			</configuration>
+				</configuration>
 				<executions>
 					<execution>
 						<id>ReleaseFolder</id>
