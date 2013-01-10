@@ -1,26 +1,26 @@
 ---
 layout: default
 ---
-<link href="/tutorial/syntax.css" rel="stylesheet" type="text/css" />
+<link href="{{ site.root_url }}/tutorial/syntax.css" rel="stylesheet" type="text/css" />
 
 <!-- pager -->
 <div id="pager">
 
 {% if page.pagenumber > 1 %}
-<a href="/tutorial/{{ page.pagenumber | minus:1 }}.html">&laquo;prev</a> &bull;
+<a href="{{ site.root_url }}/tutorial/{{ page.pagenumber | minus:1 }}.html">&laquo;prev</a> &bull;
 {% endif %}
 
 {% for n in (1..page.totalpages) %}
 {% if n == page.pagenumber %}
 	{{ n }}
 {% else %}
-	<a href="/tutorial/{{ n }}.html">{{ n }}</a>
+	<a href="{{ site.root_url }}/tutorial/{{ n }}.html">{{ n }}</a>
 {% endif %}
 {% endfor %}
 
 {% if page.pagenumber < page.totalpages %}
 &bull;
-<a href="/tutorial/{{ page.pagenumber | plus:1 }}.html">next&raquo;</a>
+<a href="{{ site.root_url }}/tutorial/{{ page.pagenumber | plus:1 }}.html">next&raquo;</a>
 {% endif %}
 </div>
 

@@ -18,24 +18,24 @@ totalpages: 4
   however, defines the places where agents can walk, and the places where they
   can't (walls). For the simulation to make visual sense, the walls and the background
   should match.</p>
-<div class="sidepic" style="float:right"> <a href="/tutorial/example/testland/res/map/background.png" target="_blank"><img class="border" src="/tutorial/images/background.png" target="_blank" /><br/>
+<div class="sidepic" style="float:right"> <a href="{{ site.root_url }}/tutorial/example/testland/res/map/background.png" target="_blank"><img class="border" src="{{ site.root_url }}/tutorial/images/background.png" target="_blank" /><br/>
   background.png</a></div>
 <p>In Testland, we create a background image using some of gimp's tools to draw
   a labyrinth. Feel free to put in your own design here. Another idea is a snapshot
-  from googlemaps or a floor plan. Once you're done, save it as <a href="/tutorial/example/testland/res/map/background.png" target="_blank">background.png</a>.
+  from googlemaps or a floor plan. Once you're done, save it as <a href="{{ site.root_url }}/tutorial/example/testland/res/map/background.png" target="_blank">background.png</a>.
   This is now the base for your simulation. All the rest of images created in
   this tutorial must have the same dimensions.</p>
 <p>Later on, in the next steps, you will need to calibrate this map, by providing
   the coordinates of its corners. If you captured the image from something like
   an on-line map, keep those points!.</p>
-<div class="sidepic" style="float:left"> <a href="/tutorial/example/testland/res/map/walls.png" target="_blank"><img class="border" src="/tutorial/images/walls.png" target="_blank" /><br/>
+<div class="sidepic" style="float:left"> <a href="{{ site.root_url }}/tutorial/example/testland/res/map/walls.png" target="_blank"><img class="border" src="{{ site.root_url }}/tutorial/images/walls.png" target="_blank" /><br/>
   background.png</a></div>
 <p>Next you need to define what parts of that background image are walkable.
   Create a new image, based on the background, which is black on the walkable
-  areas, and white on the walls, and save it as <a href="/tutorial/example/testland/res/map/walls.png" target="_blank">walls.png</a>.
+  areas, and white on the walls, and save it as <a href="{{ site.root_url }}/tutorial/example/testland/res/map/walls.png" target="_blank">walls.png</a>.
   Most of the time it pays to use the magic wand to select a certain color on
   the background, create a new layer, and paint it black; then paint the background
-  layer white. At any rate, check the expected <a href="/tutorial/example/testland/res/map/walls.png" target="_blank">result</a>.</p>
+  layer white. At any rate, check the expected <a href="{{ site.root_url }}/tutorial/example/testland/res/map/walls.png" target="_blank">result</a>.</p>
 <h4>Defining places</h4>
 <p>You can define places in the WorldModel on the next step, but calculating
   the coordinates of those places can be a pain. To make your life easier, you
@@ -48,7 +48,7 @@ totalpages: 4
 <p>Testland is a bit of an abstract world so, instead of houses and offices,
   we define only two types: &quot;Nowhere&quot; places and &quot;Isolated&quot; places.
   The first type includes two places in the main map area, and the second, two
-  places in the isolated south east corner. The images end up looking like this: <a href="/tutorial/example/testland/res/places/Nowhere.png" target="_blank">Nowhere.png</a> and <a href="/tutorial/example/testland/res/places/Isolated.png" target="_blank">Isolated.png</a>;
+  places in the isolated south east corner. The images end up looking like this: <a href="{{ site.root_url }}/tutorial/example/testland/res/places/Nowhere.png" target="_blank">Nowhere.png</a> and <a href="{{ site.root_url }}/tutorial/example/testland/res/places/Isolated.png" target="_blank">Isolated.png</a>;
   look close, there are some dots in there!</p>
 <p>Again, remember you can also define places at simulation runtime. In fact,
   a new place is created everytime you manually tell an agent where to go!</p>
@@ -76,16 +76,16 @@ totalpages: 4
 <table>
   <tr>
     <td>
-      <div class="sidepic"><a href="/tutorial/example/testland/res/overlays/AtCenter.png" target="_blank"><img class="border" src="/tutorial/images/AtCenter.png"  target="_blank"/><br/>AtCenter.png</a></div>
+      <div class="sidepic"><a href="{{ site.root_url }}/tutorial/example/testland/res/overlays/AtCenter.png" target="_blank"><img class="border" src="{{ site.root_url }}/tutorial/images/AtCenter.png"  target="_blank"/><br/>AtCenter.png</a></div>
     </td>
     <td>
-      <div class="sidepic"><a href="/tutorial/example/testland/res/overlays/AtStart.png" target="_blank"> <img class="border" src="/tutorial/images/AtStart.png" target="_blank" /><br/>AtStart.png</a></div>
+      <div class="sidepic"><a href="{{ site.root_url }}/tutorial/example/testland/res/overlays/AtStart.png" target="_blank"> <img class="border" src="{{ site.root_url }}/tutorial/images/AtStart.png" target="_blank" /><br/>AtStart.png</a></div>
     </td>
     <td>
-      <div class="sidepic"><a href="/tutorial/example/testland/res/overlays/Cell-ID.png" target="_blank"><img class="border" src="/tutorial/images/Cell-ID.png" target="_blank" /><br/>Cell-ID.png</a></div>
+      <div class="sidepic"><a href="{{ site.root_url }}/tutorial/example/testland/res/overlays/Cell-ID.png" target="_blank"><img class="border" src="{{ site.root_url }}/tutorial/images/Cell-ID.png" target="_blank" /><br/>Cell-ID.png</a></div>
     </td>
     <td>
-      <div class="sidepic"><a href="/tutorial/example/testland/res/overlays/Temperature.png" target="_blank"><img class="border" src="/tutorial/images/Temperature.png" target="_blank" /><br/>Temperature.png</a></div>
+      <div class="sidepic"><a href="{{ site.root_url }}/tutorial/example/testland/res/overlays/Temperature.png" target="_blank"><img class="border" src="{{ site.root_url }}/tutorial/images/Temperature.png" target="_blank" /><br/>Temperature.png</a></div>
     </td>
   </tr>
 </table>

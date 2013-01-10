@@ -1,4 +1,5 @@
-
+---
+---
 /*
 Design by Free CSS Templates
 http://www.freecsstemplates.org
@@ -61,7 +62,7 @@ h6.sub {
 	border-top: 1px solid #F4F4F4;
 }
 
-li { list-style-image: url(/images/bullet.gif); }
+li { list-style-image: url({{ site.root_url }}/images/bullet.gif); }
 
 ul {
 	margin-left: 20px;
@@ -81,22 +82,22 @@ ul span { font-weight: bold; }
 p, ol, ul, blockquote { line-height: 24px; }
 
 a.external {
-	background:url(/images/external.gif) center right no-repeat;
+	background:url({{ site.root_url }}/images/external.gif) center right no-repeat;
 	padding-right: 13px;
 }
 
 a.pdf {
-	background:url(/images/pdf.gif) left no-repeat;
+	background:url({{ site.root_url }}/images/pdf.gif) left no-repeat;
 	padding-left: 20px;
 }
 
 a.bibtex {
-	background:url(/images/bibtex.gif) left no-repeat;
+	background:url({{ site.root_url }}/images/bibtex.gif) left no-repeat;
 	padding-left: 23px;
 }
 
 a.abstract {
-	background:url(/images/lupa.gif) left no-repeat;
+	background:url({{ site.root_url }}/images/lupa.gif) left no-repeat;
 	padding-left: 26px;
 }
 
@@ -121,7 +122,7 @@ img { border: none; }
 #submitsearch {
 	border: 1px solid #EBEBEB;
 	border-bottom-color: #DDDDDD;
-	background: #FBFBFB url(/images/img7.gif) repeat-x;
+	background: #FBFBFB url({{ site.root_url }}/images/img7.gif) repeat-x;
 	text-transform: lowercase;
 	font-size: 12px;
 	color: #7A7A7A;
@@ -133,7 +134,7 @@ img { border: none; }
 	height: 33px;
 	margin: 0 0 30px 0;
 	padding: 10px 15px 0 15px;
-	background: url(/images/img6.gif) repeat-x;
+	background: url({{ site.root_url }}/images/img6.gif) repeat-x;
 	border-bottom: 1px solid #F2F2F2;
 }
 
@@ -152,7 +153,7 @@ img { border: none; }
 	width: 917px;
 	height: 324px;
 	margin: 0 auto;
-	background: url(/images/siafuTop.jpg) no-repeat;
+	background: url({{ site.root_url }}/images/siafuTop.jpg) no-repeat;
 }
 
 /* Logo */
@@ -160,7 +161,7 @@ img { border: none; }
 #logo {
 	float: left;
 	padding: 0 0 0 0;
-	background: url(/images/img1.gif) no-repeat;
+	background: url({{ site.root_url }}/images/img1.gif) no-repeat;
 }
 
 #logo h1 {
@@ -184,7 +185,7 @@ img { border: none; }
 #logoright {
 	clear: right;
 	height: 45px;
-	background: url(/images/img3.gif) no-repeat right top;
+	background: url({{ site.root_url }}/images/img3.gif) no-repeat right top;
 }
 
 /* Menu */
@@ -223,7 +224,7 @@ img { border: none; }
 	width: 877px;
 	height: 170px;
 	margin: 0 auto;
-	background: url(/images/img5.gif) repeat-x left bottom;
+	background: url({{ site.root_url }}/images/img5.gif) repeat-x left bottom;
 	border-right: 20px solid #FFFFFF;
 	border-left: 20px solid #FFFFFF;
 }
@@ -235,7 +236,7 @@ img { border: none; }
 	min-height: 500px;
 	margin: 0 auto;
 	padding: 0px 35px 0 35px;
-	background: #FFFFFF url(/images/img8.gif) no-repeat left bottom;
+	background: #FFFFFF url({{ site.root_url }}/images/img8.gif) no-repeat left bottom;
 }
 
 #colOne {

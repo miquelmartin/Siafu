@@ -6,7 +6,7 @@ layout: default
 
 <table class="simulation">
   <tr>
-    <td class="simpreview"><a href="/images/simulations/full/{{ page.mainscreenshotFull }}"><img src="/images/simulations/preview/{{ page.mainscreenshot }}"/></a></td>
+    <td class="simpreview"><a href="{{ site.root_url }}/images/simulations/full/{{ page.mainscreenshotFull }}"><img src="{{ site.root_url }}/images/simulations/preview/{{ page.mainscreenshot }}"/></a></td>
     <td class="simdescription">
       <h1></h1>
       <ul>
@@ -29,8 +29,8 @@ layout: default
           </td>
           <td width="100%">
           	{% for s in page.screenshots %}
-                <a href="/images/simulations/full/{{ s }}" >
-                <img class="screenshot" src="/images/simulations/preview/{{ s }}"/>
+                <a href="{{ site.root_url }}/images/simulations/full/{{ s }}" >
+                <img class="screenshot" src="{{ site.root_url }}/images/simulations/preview/{{ s }}"/>
                 </a>
 	        {% endfor %}
 
