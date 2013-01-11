@@ -1,0 +1,13 @@
+de.nec.nle.siafu.behaviormodels
+de.nec.nle.siafu.control
+de.nec.nle.siafu.control.progress
+de.nec.nle.siafu.exceptions
+de.nec.nle.siafu.externalCommand
+de.nec.nle.siafu.graphics
+de.nec.nle.siafu.graphics.controlpanel
+de.nec.nle.siafu.graphics.markers
+de.nec.nle.siafu.graphics.simulationarea
+de.nec.nle.siafu.model
+de.nec.nle.siafu.output
+de.nec.nle.siafu.types
+de.nec.nle.siafu.utils
