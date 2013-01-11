@@ -1,6 +1,8 @@
 # Siafu, the Context Simulator
-## So, what is Siafu?
 
+![Siafu Screehshot](http://siafusimulator.org/images/screenshot-glasgow-small.jpg)
+
+## So, what is Siafu?
 Siafu is a versatile, large-scale Context Simulator written in Java. Download it, create or modify a scenario and fire it up. Your simulated world includes models for agents, places and the context therein. By tweaking these models, you influence the scenario, and can collect the context data for any of your agents.
 
 ## Fine, what do I do with it?
@@ -9,7 +11,7 @@ Glad you asked! Essentially: visualize your context information, generate datase
 Siafu can generate its own context and at the same time incorporate the one you obtain from your sensors. The information can then be visualized with a user interface, or you can generate datasets for machine learning. By plugging an application to it, you can test and demonstrate the effects of context changes on it. Here's how a setup can look like:
 
 <p align="center">
-	<img alt="Siafu typical setups image" src=http://siafusimulator.org/images/usage.gif />
+<img alt="Siafu typical setups image" src=http://siafusimulator.org/images/usage.gif />
 </p>
 
 Grab Siafu, get one of the existing Simulations or create your own using this tutorial. Siafu is released under the [GPL license](http://www.gnu.org/licenses/gpl.html), enjoy and tell us how it worked out!
