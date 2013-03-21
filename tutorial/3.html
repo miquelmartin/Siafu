@@ -4,7 +4,7 @@ pagenumber: 3
 totalpages: 4
 ---
 
-<link rel='stylesheet' title='Syntax Highlighting' href='data/tutorials/syntax.css' type='text/css'>
+<link rel='stylesheet' title='Syntax Highlighting' href='syntax.css' type='text/css'>
 
 <h1>Programming the behavior</h1>
 <p>Here's where you get to show those java skills you learned! There are three behavior models that you need to program to get your simulation running:</p>
@@ -15,7 +15,7 @@ totalpages: 4
 </ul>
 <p>You program them by extending &quot;BaseAgentModel&quot;, &quot;BaseWorldModel&quot; and &quot;BaseContextModel&quot; from the packege &quot;de.nec.nle.siafu.behaviormodels.BaseAgentModel&quot;.</p>
 <p>There are always two methods to override: createX and doIteration. The create method is called when the world is created, and allows you to create your Agents, Places or Overlays. The doIteration is called (guess) at each iteration, and allows you to modify them.</p>
-<p>For simplicity, we will not change the context or world model here, that is, we will just create a class that extends BaseWorldModel and BaseContextModel. Here you go: <a href="tutorial/example/testland/de/nec/nle/siafu/testland/WorldModel.java" target="_blank">WorldModel.java</a> and <a href="tutorial/example/testland/de/nec/nle/siafu/testland/ContextModel.java" target="_blank">ContextModel.java</a></p>
+<p>For simplicity, we will not change the context or world model here, that is, we will just create a class that extends BaseWorldModel and BaseContextModel. Here you go: <a href="example/testland/de/nec/nle/siafu/testland/WorldModel.java" target="_blank">WorldModel.java</a> and <a href="example/testland/de/nec/nle/siafu/testland/ContextModel.java" target="_blank">ContextModel.java</a></p>
 
 <h4>The Agent Behavior model</h4>
 <p>We're going to define three types of users for TestLand, each with different behaviors:</p>
@@ -27,7 +27,7 @@ totalpages: 4
 
 <p>I honestly don't know how much detail you guys need here, so, <a href="{{ site.root_url }}/contact">contact</a> me if this isn't enough.</p>
 
-<p>Let's go through <a href="data/tutorials/example/testland/de/nec/nle/siafu/testland/AgentModel.java" target="_blank">AgentModel.java</a> (<a href="data/tutorials/AgentModel.java.html" target="_blank">colorized</a>).</p>
+<p>Let's go through <a href="example/testland/de/nec/nle/siafu/testland/AgentModel.java" target="_blank">AgentModel.java</a> (<a href="AgentModel.java.html" target="_blank">colorized</a>).</p>
 
 <h4>AgentModel walkthrough - Creating the agents</h4>
 <p>We start with the create agents method. You are going to have to return an ArrayList full with all Agents you need in the simulation. Check this code:</p>
@@ -35,7 +35,7 @@ totalpages: 4
 
 <div class="code">{% include tutorial_snippet1.html %}</div>
 
-<p>We fill most of the population with automatically created agents, using a generator class which you can ignore for now. It's right here, <a href="data/tutorials/example/testland/de/nec/nle/siafu/testland/AgentGenerator.java" target="_blank">AgentGenerator.java</a> (<a href="data/tutorials/AgentGenerator.java.html" target="_blank">colorized</a>).</p>
+<p>We fill most of the population with automatically created agents, using a generator class which you can ignore for now. It's right here, <a href="example/testland/de/nec/nle/siafu/testland/AgentGenerator.java" target="_blank">AgentGenerator.java</a> (<a href="AgentGenerator.java.html" target="_blank">colorized</a>).</p>
 <p>However, we need one extra field in the agents, ACTIVITY. Because the AgentGenerator doesn't include this, we do it manually here; because all agents need to have the same fields, we add the ACTIVITY field to each and everyone of them here. We are also doing some other stuff, like making the agents visible, but this is all covered by the API.</p>
 <p>This has created all our normal agents, but we want to highlight three special ones: Teresa, Pietro and the Postman. We will also move one of them to the isolated part of the map. In the following snippet, we take those four agents aside, plus a couple of places that we will need later:</p>
 
