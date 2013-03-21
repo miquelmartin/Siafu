@@ -4,9 +4,9 @@ layout: default
  
 <h1>Simulation: {{ page.name }}</h1>
 
-<table class="simulation">
+<table itemscope itemtype="http://data-vocabulary.org/Product" class="simulation">
   <tr>
-    <td class="simpreview"><a href="{{ site.root_url }}/images/simulations/full/{{ page.mainscreenshotFull }}"><img src="{{ site.root_url }}/images/simulations/preview/{{ page.mainscreenshot }}"/></a></td>
+    <td class="simpreview"><a href="{{ site.root_url }}/images/simulations/full/{{ page.mainscreenshotFull }}"><img itemprop="image" src="{{ site.root_url }}/images/simulations/preview/{{ page.mainscreenshot }}"/></a></td>
     <td class="simdescription">
       <h1></h1>
       <ul>
@@ -17,7 +17,7 @@ layout: default
         <li><span>Website:</span> <a class="external" href="{{ page.websitelinks }}"> {{ page.website }}</a></li>
         <li><span>Download link:</span> <a class="external" href="{{ page.downloadlink }}">here</a></li>
       </ul>
-      {{ content }}</td>
+      <span itemprop="description">{{ content }}</span></td>
   </tr>
   <tr>
     <td>&nbsp;</td>
