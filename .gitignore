@@ -1,8 +1,8 @@
 .DS_Store
 .metadata
-.settings
-.classpath
-.project
+**/.settings/
+**/.classpath
+**/.project
 target
 bin
 TestsProject
