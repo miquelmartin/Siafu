@@ -51,7 +51,8 @@ public class CommandProcessor {
 	/**
 	 * Create a command processor.
 	 * 
-	 * @param control Siafu's controller
+	 * @param control
+	 *            Siafu's controller
 	 */
 	public CommandProcessor(final Controller control) {
 		this.control = control;
@@ -60,42 +61,42 @@ public class CommandProcessor {
 	/**
 	 * Put a marker on an trackable.
 	 * 
-	 * @param mark the mark to put
+	 * @param mark
+	 *            the mark to put
 	 */
 	public void mark(final Marker mark) {
 		// System.out.println("Marking "+p.getName()+" with style
 		// "+style+".");
-		control.getGUI().getMarkers().addMarker(mark,
-			Markers.Type.EXTERNAL);
+		control.getGUI().getMarkers().addMarker(mark, Markers.Type.EXTERNAL);
 	}
 
 	/**
 	 * Remove the external markers from the trackable.
 	 * 
-	 * @param t the trackable to unmark
+	 * @param t
+	 *            the trackable to unmark
 	 */
 	public void unMark(final Trackable t) {
 		// System.out.println("Removing mark from "+p.getName()+".");
-		control.getGUI().getMarkers().removeMarker(t,
-			Markers.Type.EXTERNAL);
+		control.getGUI().getMarkers().removeMarker(t, Markers.Type.EXTERNAL);
 	}
 
 	/**
 	 * Remove all the markers from all the trackables.
 	 */
 	public void unMarkAll() {
-		control.getGUI().getMarkers().removeAllMarkers(
-			Markers.Type.EXTERNAL);
+		control.getGUI().getMarkers().removeAllMarkers(Markers.Type.EXTERNAL);
 	}
 
 	/**
 	 * Move the provided agent to the temporary place tempPlace. You are
 	 * encouraged to use temporary places to have faster calculation (the
-	 * gradient is partial) and to avoid persisting too much to the hard
-	 * drive.
+	 * gradient is partial) and to avoid persisting too much to the hard drive.
 	 * 
-	 * @param a the agent to move
-	 * @param tempPlace the place to move it to
+	 * @param a
+	 *            the agent to move
+	 * @param tempPlace
+	 *            the place to move it to
 	 */
 	public void move(final Agent a, final Place tempPlace) {
 		// System.out.println("Moving "+p.getName()+" to
@@ -107,9 +108,11 @@ public class CommandProcessor {
 	/**
 	 * Allow an agent to follor the AgentModel's commands or not.
 	 * 
-	 * @param a the agent to control
-	 * @param autoSetting true if we want the agent to move according to the
-	 *            behavior model, false for it to stand still and await GUI or
+	 * @param a
+	 *            the agent to control
+	 * @param autoSetting
+	 *            true if we want the agent to move according to the behavior
+	 *            model, false for it to stand still and await GUI or
 	 *            CommandListener commands
 	 */
 	public void auto(final Agent a, final boolean autoSetting) {
@@ -125,8 +128,9 @@ public class CommandProcessor {
 	/**
 	 * Make all agents move on auto, that is, following the behavior model.
 	 * 
-	 * @param autoSetting true to make all agents move on auto, false to make
-	 *            them all stand still and be controlled by the gui only.
+	 * @param autoSetting
+	 *            true to make all agents move on auto, false to make them all
+	 *            stand still and be controlled by the gui only.
 	 */
 	public void autoAll(final boolean autoSetting) {
 		// System.out.println("Putting "+p.getName()+" on auto
@@ -145,8 +149,10 @@ public class CommandProcessor {
 	/**
 	 * Change the agent's image to that given by image.
 	 * 
-	 * @param a the agent to modify
-	 * @param image the name of the sprite to assign to the agent
+	 * @param a
+	 *            the agent to modify
+	 * @param image
+	 *            the name of the sprite to assign to the agent
 	 */
 	public void image(final Agent a, final String image) {
 		// System.out.println("Making "+p.getName()+" look like: "+image+".");
@@ -157,7 +163,8 @@ public class CommandProcessor {
 	 * Revert the agent's image to the one it had before, effectively rolling
 	 * back one image change.
 	 * 
-	 * @param a the agent whose image we want to revert
+	 * @param a
+	 *            the agent whose image we want to revert
 	 */
 	public void resetImage(final Agent a) {
 		a.setPreviousImage();
@@ -166,13 +173,16 @@ public class CommandProcessor {
 	/**
 	 * Get an agent's context.
 	 * 
-	 * @param trackableName an array with the trakables whose context we want
-	 *            to retrieve
-	 * @param context an array with the context variable names to retrieve
+	 * @param trackableName
+	 *            an array with the trakables whose context we want to retrieve
+	 * @param context
+	 *            an array with the context variable names to retrieve
 	 * @return a string of the type "agent1/ctxValue1 agent1/ctxValue2
 	 *         agent2/ctxValue1..."
-	 * @throws UnknownContextException if the context variable is unknown
-	 * @throws TrackableNotFoundException if the agent or place is unknown
+	 * @throws UnknownContextException
+	 *             if the context variable is unknown
+	 * @throws TrackableNotFoundException
+	 *             if the agent or place is unknown
 	 */
 	public String getContext(final String[] trackableName,
 			final String[] context) throws UnknownContextException,
@@ -185,11 +195,11 @@ public class CommandProcessor {
 		for (int i = 0; i < trackableName.length; i++) {
 			try {
 				trackables.add(control.getWorld().getPersonByName(
-					trackableName[i]));
+						trackableName[i]));
 			} catch (AgentNotFoundException e) {
 				try {
 					trackables.add(control.getWorld().getPlaceByName(
-						trackableName[i]));
+							trackableName[i]));
 				} catch (PlaceNotFoundException e2) {
 					throw new TrackableNotFoundException("Trackable \""
 							+ trackableName[i] + "\" not found");
@@ -199,8 +209,7 @@ public class CommandProcessor {
 
 		for (Trackable t : trackables) {
 			for (int j = 0; j < context.length; j++) {
-				reply +=
-						(t.getName() + "/" + t.getContext(context[j]) + " ");
+				reply += (t.getName() + "/" + t.getContext(context[j]) + " ");
 			}
 		}
 
@@ -210,14 +219,17 @@ public class CommandProcessor {
 	/**
 	 * Set an agent's context.
 	 * 
-	 * @param trackableName the agent whose context we want to set
-	 * @param variable the variable to set
-	 * @param value the new value for that variable
-	 * @throws TrackableNotFoundException if the trackable doesn't exist
+	 * @param trackableName
+	 *            the agent whose context we want to set
+	 * @param variable
+	 *            the variable to set
+	 * @param value
+	 *            the new value for that variable
+	 * @throws TrackableNotFoundException
+	 *             if the trackable doesn't exist
 	 */
-	public void setContext(final String trackableName,
-			final String variable, final String value)
-			throws TrackableNotFoundException {
+	public void setContext(final String trackableName, final String variable,
+			final String value) throws TrackableNotFoundException {
 		Trackable t;
 		try {
 			t = control.getWorld().getPersonByName(trackableName);
@@ -225,8 +237,8 @@ public class CommandProcessor {
 			try {
 				t = control.getWorld().getPlaceByName(trackableName);
 			} catch (PlaceNotFoundException e2) {
-				throw new TrackableNotFoundException(
-						"Uknown trackable: \"" + trackableName + "\".");
+				throw new TrackableNotFoundException("Uknown trackable: \""
+						+ trackableName + "\".");
 			}
 		}
 		FlatData fd = new FlatData(value);
@@ -236,10 +248,13 @@ public class CommandProcessor {
 	/**
 	 * Find agents near the position pos, up to a distance dist.
 	 * 
-	 * @param pos the base position
-	 * @param dist the distance in simulation grid points
+	 * @param pos
+	 *            the base position
+	 * @param dist
+	 *            the distance in simulation grid points
 	 * @return the list of space separated agents near that position
-	 * @throws NothingNearException if nothing is found
+	 * @throws NothingNearException
+	 *             if nothing is found
 	 */
 	public String findAgentsNear(final Position pos, final int dist)
 			throws NothingNearException {
@@ -255,10 +270,13 @@ public class CommandProcessor {
 	/**
 	 * Find places near the position pos, up to a distance dist.
 	 * 
-	 * @param pos the base position
-	 * @param dist the distance in simulation grid points
+	 * @param pos
+	 *            the base position
+	 * @param dist
+	 *            the distance in simulation grid points
 	 * @return the list of space separated places near that position
-	 * @throws NothingNearException if nothing is found
+	 * @throws NothingNearException
+	 *             if nothing is found
 	 */
 	public String findPlacesNear(final Position pos, final int dist)
 			throws NothingNearException {
@@ -282,7 +300,8 @@ public class CommandProcessor {
 	/**
 	 * Make the given agent visible.
 	 * 
-	 * @param a the agent to unhide
+	 * @param a
+	 *            the agent to unhide
 	 */
 	public void unhide(final Agent a) {
 		a.setVisible(true);
@@ -300,9 +319,20 @@ public class CommandProcessor {
 	/**
 	 * Hide a given agent.
 	 * 
-	 * @param a the agent to make invisible
+	 * @param a
+	 *            the agent to make invisible
 	 */
 	public void hide(final Agent a) {
 		a.setVisible(false);
+	}
+
+	/**
+	 * Get the simulation time.
+	 * 
+	 * @return the simulation time in Unix time
+	 */
+	public String time() {
+		return Long
+				.toString(control.getWorld().getTime().getTimeInMillis() / 1000);
 	}
 }

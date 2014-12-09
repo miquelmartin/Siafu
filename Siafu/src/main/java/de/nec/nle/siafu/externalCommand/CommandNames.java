@@ -89,6 +89,11 @@ public class CommandNames {
 	public static final String UNHIDE = "unhide";
 
 	/**
+	 * Get the simulation time.
+	 */
+	public static final String TIME = "time";
+	
+	/**
 	 * Represents all of the agents, in the methods that allow it.
 	 */
 	public static final String ALL = "all";

@@ -31,7 +31,7 @@ import static de.nec.nle.siafu.externalCommand.CommandNames.MOVE;
 import static de.nec.nle.siafu.externalCommand.CommandNames.SET_CONTEXT;
 import static de.nec.nle.siafu.externalCommand.CommandNames.SET_PREVIOUS_IMAGE;
 import static de.nec.nle.siafu.externalCommand.CommandNames.UNHIDE;
-import static de.nec.nle.siafu.externalCommand.CommandNames.UNMARK;
+import static de.nec.nle.siafu.externalCommand.CommandNames.*;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -209,8 +209,8 @@ public class CommandListener implements Runnable {
 			BufferedReader in = null;
 			out = null;
 			try {
-				in = new BufferedReader(new InputStreamReader(socket
-						.getInputStream()));
+				in = new BufferedReader(new InputStreamReader(
+						socket.getInputStream()));
 				out = new PrintWriter(socket.getOutputStream(), true);
 
 				String command = in.readLine();
@@ -293,6 +293,8 @@ public class CommandListener implements Runnable {
 				processHide(part);
 			} else if (part[0].equalsIgnoreCase(UNHIDE)) {
 				processUnhide(part);
+			} else if (part[0].equalsIgnoreCase(TIME)) {
+				processTime();
 			} else {
 				usage(part[0]);
 			}
@@ -352,6 +354,16 @@ public class CommandListener implements Runnable {
 				}
 				cp.unhide(person);
 			}
+		}
+
+		/**
+		 * Process the command to get the simulation time.
+		 * 
+		 * @param part
+		 *            the command parts.
+		 */
+		private void processTime() {
+			send(cp.time());
 		}
 
 		/**
@@ -850,6 +862,8 @@ public class CommandListener implements Runnable {
 				msg = "ERR - Usage: " + FIND_NEARBY_PLACES
 						+ " agentName distance\n" + "e.g.: "
 						+ FIND_NEARBY_PLACES + " Agnes 10";
+			} else if (command.equalsIgnoreCase(TIME)) {
+				msg = "ERR - Usage: " + TIME;
 			} else {
 				msg = "ERR - Unknown command " + command
 						+ ".\nType a command for help on its syntax.\n"
