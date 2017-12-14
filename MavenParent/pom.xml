@@ -13,8 +13,8 @@
 
 	<repositories>
 		<repository>
-			<id>swt-repo</id>
-			<url>https://swt-repo.googlecode.com/svn/repo/</url>
+			<id>maven-eclipse-repo</id>
+			<url>http://maven-eclipse.github.io/maven</url>
 		</repository>
 	</repositories>
 
@@ -116,7 +116,7 @@
 			<dependency>
 				<groupId>org.eclipse.swt</groupId>
 				<artifactId>${swt.artifactId}</artifactId>
-				<version>3.8</version>
+				<version>4.5</version>
 			</dependency>
 			<dependency>
 				<groupId>swt</groupId>
