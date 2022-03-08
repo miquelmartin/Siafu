@@ -1,5 +1,7 @@
 # Siafu, the Context Simulator
 
+![example workflow](https://github.com/xstefanox/siafu/actions/workflows/build.yml/badge.svg)
+
 ![Siafu Screehshot](http://siafusimulator.org/images/screenshot-glasgow-small.jpg)
 
 ## So, what is Siafu?
